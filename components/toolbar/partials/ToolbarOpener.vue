@@ -1,6 +1,6 @@
 <template>
     <div class="toolbar-opener" :class='{"menu-active": IsMenuOpened}' >
-        <input type="checkbox" @click='menuOpen' v-model='checked' id="checkbox2" class="checkbox2 visuallyHidden">
+        <input type="checkbox" @click.stop='menuOpen' v-model='checked' id="checkbox2" class="checkbox2 visuallyHidden">
         <label for="checkbox2">
             <div class="hamburger hamburger2">
                 <span class="bar bar1"></span>
@@ -28,9 +28,6 @@
 	        IsMenuOpened () {
 	            return this.$store.getters.MenuOpened;
 	        },
-	        IsToolbar () {
-	            return this.$store.getters.MenuOpened;
-	        }
 	    }
 	}
 </script>
@@ -67,7 +64,6 @@
 	      	border: 2px solid $white;
 	      	font-size: 2rem;
 	      	text-align: center;
-	      	z-index: 99;
 	      	border-radius: 50%;
 	      	z-index: 9;
 	      	$m: &;

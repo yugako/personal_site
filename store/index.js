@@ -10,19 +10,19 @@ export const state = () => ({
 export const mutations = {
   isExpanded (state) {
       state.expanded = !state.expanded;
-    },
-    isOpened (state) {
-      state.popupOpened = !state.popupOpened;
-    },
-    isMenuOpened (state) {
-      state.menuOpened = !state.menuOpened;
-    },
-    setPopupData(state, payload) {
-      state.popupData = payload;
-    },
-    setBlogPosts(state, list) {
-      state.blogPosts = list;
-    },
+  },
+  isOpened (state) {
+    state.popupOpened = !state.popupOpened;
+  },
+  isMenuOpened (state) {
+    state.menuOpened = !state.menuOpened;
+  },
+  setPopupData(state, payload) {
+    state.popupData = payload;
+  },
+  setBlogPosts(state, list) {
+    state.blogPosts = list;
+  },
 }
 
 export const actions = {

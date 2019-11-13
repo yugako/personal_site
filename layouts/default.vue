@@ -1,13 +1,13 @@
 <template>
-  <div class="app">
+  <div class="app" @click.stop='hideMenu'>
     <!-- Toolbar -->
     <transition name='slide-fade'>
-       <Toolbar v-if='IsMenuOpened' />
+       <Toolbar v-if='IsToolbar' />
     </transition>
 
     <!-- Content view -->
     <transition name='slide-fade'>
-       <nuxt class='app-view' :class='{"toolbar-active": IsToolbar}' />
+       <nuxt class='app-view' @click='hideMenu()' :class='{"toolbar-active": IsToolbar}' />
     </transition>
    
     <!-- Toolbar toggler -->
@@ -34,14 +34,20 @@
 
       })
     },
-    
+    methods: {
+      hideMenu() {
+        const windowWidth = window.innerWidth;
+
+        if (windowWidth < 768 && this.IsToolbar) {
+          console.log('opened')
+          this.$store.commit('isMenuOpened');
+        }
+      }
+    },
     components: {
       Toolbar, ToolbarOpener
     },
     computed: {
-        IsMenuOpened () {
-            return this.$store.getters.MenuOpened;
-        },
         IsToolbar () {
             return this.$store.getters.MenuOpened;
         }
@@ -60,7 +66,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
-    z-index: 9999;
+    z-index: 9;
     &::before {
         content: '';
         width: 100%;
