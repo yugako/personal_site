@@ -46,7 +46,7 @@
 			flex: 0 0 75px;
 		}
 		@media (max-height: 500px) {
-			height: 100%;
+			justify-content: space-between;
 		}
 	}
 </style>
