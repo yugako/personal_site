@@ -1,14 +1,17 @@
 <template>
-  <div class="app" @click.stop='hideMenu'>
+  <div class="app" >
     <!-- Toolbar -->
     <transition name='slide-fade'>
        <Toolbar v-if='IsToolbar' />
     </transition>
 
     <!-- Content view -->
-    <transition name='slide-fade'>
-       <nuxt class='app-view' @click='hideMenu()' :class='{"toolbar-active": IsToolbar}' />
-    </transition>
+    <div class="app-wrapp" @click.stop='hideMenu'>
+      <transition name='slide-fade'>
+        <nuxt class='app-view'  :class='{"toolbar-active": IsToolbar}' />
+      </transition>
+    </div>  
+    
    
     <!-- Toolbar toggler -->
     <toolbar-opener />
@@ -41,6 +44,7 @@
         if (windowWidth < 768 && this.IsToolbar) {
           console.log('opened')
           this.$store.commit('isMenuOpened');
+          this.$store.commit('CheckHamburger');
         }
       }
     },
@@ -76,6 +80,11 @@
         left: 0;
         background-color: rgba($dark, 0.55);
         z-index: -1;
+    }
+    &-wrapp {
+      width: 100%;
+      height: inherit;
+      margin: 0;
     }
     &-view {
       width: 100%;

@@ -25,7 +25,7 @@
 							I have couple of hobbies but I like to travel. I have already travelled almost all the districts of our country with my father. I am fond of fruit. 
 						</p>
 					</div>
-					<g-button external='#' text='Download CV' />
+					<g-button external='https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP' text='Download CV' />
  				</div>
  			</div>
  	</div>

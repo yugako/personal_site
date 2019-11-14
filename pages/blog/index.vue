@@ -31,18 +31,18 @@
   .blog {
     background-color: rgba($dark, 0.9);
     &-articles {
-      margin-top: 110px;
+      padding-top: 110px;
       @include md-size-max {
-        margin-top: 80px;
+        padding-top: 80px;
       }
       @include md-size-max {
-        margin-top: 70px;
+        padding-top: 70px;
       }
     }
     &-title {
-      margin-top: 60px;
+      padding-top: 60px;
       @include md-size-max {
-        margin-top: 30px;
+        padding-top: 30px;
       }
     }
   }

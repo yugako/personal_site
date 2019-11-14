@@ -6,7 +6,7 @@
 </template>
 <script>
 	export default {
-		name: 'title',
+		name: 'g_title',
 		props: ['text']
 	}
 </script>

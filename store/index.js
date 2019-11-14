@@ -1,9 +1,9 @@
 export const state = () => ({
-  expanded: false,
-    popupOpened: false,
-    popupData: '',
-    menuOpened: true,
-    blogPosts: [],
+  checked: true,
+  popupOpened: false,
+  popupData: '',
+  menuOpened: true,
+  blogPosts: [],
 
 })
 
@@ -16,6 +16,9 @@ export const mutations = {
   },
   isMenuOpened (state) {
     state.menuOpened = !state.menuOpened;
+  },
+  CheckHamburger(state) {
+    state.checked = !state.checked;
   },
   setPopupData(state, payload) {
     state.popupData = payload;
@@ -55,5 +58,8 @@ export const getters = {
     },
     MenuOpened: state => {
       return state.menuOpened;
+    },
+    BurgerChecked: state => {
+      return state.checked;
     }
 }

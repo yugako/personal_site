@@ -11,67 +11,6 @@
 	$primary-font: 'Oswald', sans-serif;
 	$secondary-font: 'Open Sans', sans-serif;
 
-/* Grid */
-
-	.grid-wrapper {
-	    margin-left: auto;
-	    margin-right: auto;
-	    padding-left: 30px;
-	    padding-right: 30px;
-	}
-	    
-	.row-wrapper {
-	    display: grid;
-	    grid-template-columns: repeat(12, 1fr);
-	    grid-row-gap: 5px;
-	    grid-column-gap: 20px;
-	}
-	.align-items-center {
-		align-items: center!important;
-	}
-
-	@for $i from 1 through 12 {
-	    .gg-#{$i} {
-	        grid-gap: #{$i}0px!important;
-	    }
-	}
-	   
-	@media(min-width: 320px) {
-	    @for $i from 1 through 12 {
-	        .cl-#{$i} {
-	            grid-column: span #{$i};
-	        }
-	    }
-	}
-	@media(min-width: 576px) {
-	    @for $i from 1 through 12 {
-	        .cl-sm-#{$i} {
-	            grid-column: span #{$i};
-	        }
-	    }
-	}
-	@media(min-width: 768px) {
-	    @for $i from 1 through 12 {
-	        .cl-md-#{$i} {
-	            grid-column: span #{$i};
-	        }
-	    }
-	}
-	@media(min-width: 992px) {
-	    @for $i from 1 through 12 {
-	        .cl-lg-#{$i} {
-	            grid-column: span #{$i};
-	        }
-	    }
-	}
-	@media(min-width: 1200px) {
-	    @for $i from 1 through 12 {
-	        .cl-xl-#{$i} {
-	            grid-column: span #{$i};
-	        }
-	    }
-	}
-
 /* Mixins */
 
 	@mixin lg-size-max {
@@ -85,7 +24,7 @@
 		}
 	}
 	@mixin sm-size-max {
-		@media (max-width: 768px) {
+		@media (max-width: 767px) {
 			@content;
 		}
 	}

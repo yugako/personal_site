@@ -87,15 +87,15 @@
 <style lang='scss'>
 	.about {
 		&-services {
-			margin-top: 110px;
-			margin-bottom: 105px;
+			padding-top: 110px;
+			padding-bottom: 105px;
 			@include md-size-max {
-			  	margin-top: 80px;
-			  	margin-bottom: 60px;
+			  	padding-top: 80px;
+			  	padding-bottom: 60px;
 			}
 			@include sm-size-max {
-			  	margin-top: 80px;
-			  	margin-bottom: 40px;
+			  	padding-top: 80px;
+			  	padding-bottom: 40px;
 			}
 			.col:last-child {
 				transform: translateX(50%);

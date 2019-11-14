@@ -41,14 +41,14 @@
 	.about {
 		background-color: rgba($dark, 0.9);
 		font-family: $secondary-font;
-
+		padding-top: 60px;
+	  padding-bottom: 110px;
+	  @include md-size-max {
+	  	padding-top: 40px;
+	  	padding-bottom: 80px;
+	  }
 		&-title:first-child {
-		  margin-top: 60px;
 		  margin-bottom: 110px;
-		  @include md-size-max {
-		  	margin-top: 40px;
-		  	margin-bottom: 80px;
-		  }
 		}
 
 	

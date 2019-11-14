@@ -1,6 +1,6 @@
 <template>
     <div class="toolbar-opener" :class='{"menu-active": IsMenuOpened}' >
-        <input type="checkbox" @click.stop='menuOpen' v-model='checked' id="checkbox2" class="checkbox2 visuallyHidden">
+        <input type="checkbox" @click.stop='menuOpen' v-model='IsBurgerChecked' id="checkbox2" class="checkbox2 visuallyHidden">
         <label for="checkbox2">
             <div class="hamburger hamburger2">
                 <span class="bar bar1"></span>
@@ -22,12 +22,16 @@
 		methods: {
 	        menuOpen () {
 	            this.$store.commit('isMenuOpened');
+	            this.$store.commit('CheckHamburger');
 	        }
 	    },
 	    computed: {
 	        IsMenuOpened () {
 	            return this.$store.getters.MenuOpened;
 	        },
+	        IsBurgerChecked() {
+	        	return this.$store.getters.BurgerChecked;
+	        }
 	    }
 	}
 </script>
