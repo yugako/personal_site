@@ -1,6 +1,7 @@
 # dependencies
 node_modules
 sw.*
+OneSignalSDK*
 # logs
 npm-debug.log
 

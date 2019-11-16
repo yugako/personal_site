@@ -23,6 +23,7 @@ module.exports = {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
   ],
   markdownit: {
@@ -33,11 +34,24 @@ module.exports = {
           '@/assets/scss/global.scss',
       ]
   },
-  pwa: {
-    icons: {
-
+  oneSignal: {
+  init: {
+    appId: '9589f68a-9130-4cb5-8ca5-cd90f009360a',
+    allowLocalhostAsSecureOrigin: true,
+    welcomeNotification: {
+        disable: false
     }
   },
+  cdn: true
+},
+  pwa: {
+    manifest: {
+      name: 'G.G.L',
+      author: 'George Gasyuk',
+    },
+  },
+  // Options
+
 
   /*
   * Plugins
