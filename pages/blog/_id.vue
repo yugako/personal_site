@@ -21,6 +21,7 @@
 
 <script>
   import pagination from '@/components/blog/Pagination.vue';
+  
   export default {
     name: 'index',
     head () {
@@ -167,17 +168,6 @@
           height: auto;
           max-height: 400px;
           object-fit: contain;
-        }
-
-        pre {
-          background-color: $dark;
-          color: $accent;
-          padding: 10px;
-          overflow-x: hidden;
-          code {
-            font-style: monospace;
-            overflow-x: auto;
-          }
         }
 
         a {
