@@ -21,7 +21,7 @@
 
 <script>
   import pagination from '@/components/blog/Pagination.vue';
-  
+
   export default {
     name: 'index',
     head () {
@@ -156,6 +156,7 @@
                 font-size: 40px;
                 font-weight: 700;
                 line-height: 1.2;
+                margin-top: -10px;
                 float: left;
                 text-transform: uppercase;
                 padding-right: 15px;
@@ -172,6 +173,25 @@
 
         a {
           color: $accent;
+        }
+
+        pre {
+          background: $light;
+          
+          border-left: 3px solid $accent;
+          color: $text-color;
+          page-break-inside: avoid;
+          font-family: monospace;
+          font-size: 15px;
+          max-width: 100%;
+          overflow: auto;
+          padding: 0.1em 1.5em;
+          display: block;
+          overflow-wrap: break-all;
+          white-space: normal;
+          @include sm-size-max {
+            font-size: 12px;
+          }
         }
     }
   }
