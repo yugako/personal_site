@@ -33,7 +33,7 @@
           {
             hid: `description`,
             name: 'description',
-            content: `${article.excerpt}`
+            content: `${article.description}`
           },
           {
             hid: 'twitter:image', 
@@ -53,7 +53,7 @@
           {
             hid: `og:description`,
             property: 'og:description',
-            content: `${article.excerpt}`
+            content: `${article.description}`
           },
         ]
       }
