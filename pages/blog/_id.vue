@@ -33,13 +33,28 @@
           {
             hid: `description`,
             name: 'description',
-            content: `${article.excerpt}'s public profile at Nuxt.js`
+            content: `${article.excerpt}`
           },
           {
             hid: 'twitter:image', 
             name: 'twitter:image', 
             content: this.article.thumbnail
-          }
+          },
+          {
+            hid: 'og:image', 
+            name: 'og:image', 
+            content: this.article.thumbnail
+          },
+          {
+            hid: `og:title`,
+            name: 'og:title',
+            content: `${article.title}`
+          },
+          {
+            hid: `og:description`,
+            name: 'og:description',
+            content: `${article.excerpt}`
+          },
         ]
       }
     },
