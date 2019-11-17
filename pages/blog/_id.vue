@@ -25,15 +25,14 @@
   export default {
     name: 'index',
     head () {
-      let article = this.article;
-      
+    
       return {
-        title: `${article.title}`,
+        title: `${this.article.title}`,
         meta: [
           {
             hid: `description`,
             name: 'description',
-            content: `${article.description}`
+            content: `${this.article.description}`
           },
           {
             hid: 'twitter:image', 
@@ -48,12 +47,12 @@
           {
             hid: `og:title`,
             property: 'og:title',
-            content: `${article.title}`
+            content: `${this.article.title}`
           },
           {
             hid: `og:description`,
             property: 'og:description',
-            content: `${article.description}`
+            content: `${this.article.description}`
           },
         ]
       }
