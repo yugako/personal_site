@@ -1,7 +1,7 @@
 <template>
 	<nav class='toolbar-menu'> 
 		<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/blog">
-    		Latest News
+    		Blog
     	</nuxt-link> 
 	</nav>
 </template>
@@ -19,7 +19,7 @@
 	.toolbar-menu {
 		&__link {
 			color: $white;
-			transform: rotateZ(-90deg);
+			// transform: rotateZ(-90deg);
 			display: block;
 			text-decoration: none;
 			&:hover {

@@ -14,7 +14,7 @@
     head: {
       title: 'Blog',
       meta: [
-        { hid: 'description', name: 'description', content: 'Blog page description' }
+        { hid: 'description', name: 'description', content: 'One more blog about web development' }
       ],
     },
     data() {

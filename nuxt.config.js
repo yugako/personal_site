@@ -7,8 +7,10 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '{{escape description }}' },
-
+      { hid: 'description', name: 'description', content: 'If you want blog, site for your company or even some, then you`re in the right place. ' },
+      { hid: 'keywords', name: 'keywords', content: 'Юрій Колцьо, сайти, spa, pwa, js, html, css, wordpress, создание сайтов, Юрій Гасюк, web development' },
+      { hid: 'robots', name: 'robots', content: 'index,follow,noodp' },
+      { hid: 'googlebot', name: 'googlebot', content: 'index,follow' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icons/favicon.ico' },
@@ -25,6 +27,9 @@ module.exports = {
     '@nuxtjs/markdownit',
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
   markdownit: {
     injected: true,
@@ -33,6 +38,10 @@ module.exports = {
       scss: [
           '@/assets/scss/global.scss',
       ]
+
+  },
+  googleAnalytics: {
+    id: 'UA-136388096-2'
   },
   oneSignal: {
   init: {
@@ -50,7 +59,14 @@ module.exports = {
       author: 'George Gasyuk',
     },
   },
-  // Options
+  sitemap: {
+    hostname: 'https://gasyuk.netlify.com',
+    gzip: true,
+    exclude: [
+      '/admin/**'
+    ],
+    routes: generate.routes
+  },
 
 
   /*

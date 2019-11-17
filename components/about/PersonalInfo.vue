@@ -19,10 +19,7 @@
 					</div>
 					<div class="about-person__descr">
 						<p>
-							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. I started in my children’s room, got pro at renowned digital agencies akij co and nork blue lebel. Now I’m based in USA, America, working for Apple fredmansky and enjoying the life in the countryside. 
-						</p>
-						<p>
-							I have couple of hobbies but I like to travel. I have already travelled almost all the districts of our country with my father. I am fond of fruit. 
+							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want blog, site for your company or even some <a title="What is SPA" target="_blank" href="https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58">SPA</a>, then you're in the right place. 
 						</p>
 					</div>
 					<g-button external='https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP' text='Download CV' />
@@ -97,6 +94,9 @@
 					margin-bottom: 1rem;
 
 				}
+				a {
+					color: $accent;
+				}
 			}
 			&__loc {
 				font-size: 0.75rem;
@@ -144,7 +144,9 @@
 						font-size: 12px;
 						line-height: 21px;
 						color: $accent;
+						
 					}
+
 				}
 			}
 		}

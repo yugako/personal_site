@@ -59,19 +59,6 @@
 					<h4 class="about-services__item-title">Search Engine Optimization</h4>
 					<p class="about-services__item-descr">Would you like to see your website on the first position in search results? You are in the right place :)</p>
 				</div>
-			</div>
-			<div class="col col-12 col-md-6">
-				<div class="about-services__item">
-					<div class="about-services__item-icon">
-						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="medkit" class="svg-inline--fa fa-medkit fa-w-16" role="img"
-							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-							<path  d="M96 480h320V128h-32V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v48H96v352zm96-384h128v32H192V96zm320 80v256c0 26.51-21.49 48-48 48h-16V128h16c26.51 0 48 21.49 48 48zM64 480H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v352zm288-208v32c0 8.837-7.163 16-16 16h-48v48c0 8.837-7.163 16-16 16h-32c-8.837 0-16-7.163-16-16v-48h-48c-8.837 0-16-7.163-16-16v-32c0-8.837 7.163-16 16-16h48v-48c0-8.837 7.163-16 16-16h32c8.837 0 16 7.163 16 16v48h48c8.837 0 16 7.163 16 16z"></path>
-						</svg>
-					</div>
-					
-					<h4 class="about-services__item-title">Quick Support</h4>
-					<p class="about-services__item-descr">Do you have a design and you don`t know how make it alive? I can help you with this problem.</p>
-				</div>
 			</div>			
 		</div>
 	</div>
@@ -97,12 +84,6 @@
 			  	padding-top: 80px;
 			  	padding-bottom: 40px;
 			}
-			.col:last-child {
-				transform: translateX(50%);
-				@include sm-size-max {
-					transform: translateX(0%);
-				}
-			} 
 			&__item {
 				text-align: center;
 				position: relative;
