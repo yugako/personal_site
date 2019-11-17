@@ -42,17 +42,17 @@
           },
           {
             hid: 'og:image', 
-            name: 'og:image', 
+            property: 'og:image', 
             content: this.article.thumbnail
           },
           {
             hid: `og:title`,
-            name: 'og:title',
+            property: 'og:title',
             content: `${article.title}`
           },
           {
             hid: `og:description`,
-            name: 'og:description',
+            property: 'og:description',
             content: `${article.excerpt}`
           },
         ]
