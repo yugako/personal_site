@@ -25,7 +25,9 @@
   export default {
     name: 'index',
     head () {
-    
+      
+      let description = this.article.description;
+      console.log(description);
       return {
         title: `${this.article.title}`,
         meta: [
@@ -41,18 +43,33 @@
           },
           {
             hid: 'og:image', 
-            property: 'og:image', 
+            name: 'og:image', 
             content: this.article.thumbnail
           },
           {
             hid: `og:title`,
-            property: 'og:title',
+            name: 'og:title',
             content: this.article.title
           },
           {
             hid: 'og:description',
-            property: 'og:description',
+            name: 'og:description',
             content: this.article.description
+          },
+          {
+            hid: 'og:url',
+            name: 'og:url',
+            content: window.location.href
+          },
+          {
+            hid: 'og:type',
+            name: 'og:type',
+            content: 'article'
+          },
+          {
+            hid: 'fb:app_id',
+            name: 'fb:app_id',
+            content: '2407963696130108'
           },
         ]
       }
