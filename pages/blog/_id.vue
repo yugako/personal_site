@@ -54,7 +54,7 @@
           {
             hid: 'og:description',
             name: 'og:description',
-            content: this.article.description
+            content: description
           },
           {
             hid: 'og:url',
