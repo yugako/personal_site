@@ -8,11 +8,11 @@
         
         <div class="blog-single__header">
            <h1 class="blog-single__header-title">{{article.title}}</h1>
-            <span class="blog-single__header-date"><i class="fas fa-calendar-alt"></i>January 06, 2019</span>
+            <span class="blog-single__header-date"><i class="fas fa-calendar-alt"></i>{{parseDate}}</span>
         </div>
         
         <div class="blog-single__content" v-html="$md.render(article.body)"></div>
-        <!-- <vue-disqus shortname="personal-12" :identifier="article.id" :url="this.id"></vue-disqus> -->
+        <vue-disqus shortname="personal-12" :identifier="article.id" :url="this.id"></vue-disqus>
        
       </div>
     </article>
@@ -47,12 +47,12 @@
           {
             hid: `og:title`,
             property: 'og:title',
-            content: `${this.article.title}`
+            content: this.article.title
           },
           {
-            hid: `og:description`,
+            hid: 'og:description',
             property: 'og:description',
-            content: `${this.article.description}`
+            content: this.article.description
           },
         ]
       }
@@ -101,6 +101,20 @@
           }
         });
         return currentPost;
+      },
+      parseDate() {
+        let day, month, year;
+
+        day = new Date(this.article.date).getDay();
+        day = day > 9 ? day: '0' + day;
+
+        month = new Date(this.article.date).getMonth();
+        month = month > 9 ? month: '0' + month;
+
+        year = new Date(this.article.date).getFullYear();
+        year = year > 9 ? year: '0' + year;
+
+        return `${day}.${month}.${year}`;
       }
     },
     components: {pagination}

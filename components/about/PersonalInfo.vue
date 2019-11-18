@@ -19,7 +19,7 @@
 					</div>
 					<div class="about-person__descr">
 						<p>
-							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want blog, site for your company or even some <a title="What is SPA" target="_blank" href="https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58">SPA</a>, then you're in the right place. 
+							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want a blog, site for your company or even some <a title="What is SPA" target="_blank" href="https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58">SPA</a>, then you're in the right place. 
 						</p>
 					</div>
 					<g-button external='https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP' text='Download CV' />
