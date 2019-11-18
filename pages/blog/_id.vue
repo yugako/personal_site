@@ -1,5 +1,6 @@
 <template>
  <article class="blog-single">
+      <scrollbar />
       <!-- Posts pagination -->
       <pagination :prevPost='prevPost' :nextPost='nextPost' />
       <!-- Post Content -->
@@ -12,7 +13,7 @@
         </div>
         
         <div class="blog-single__content" v-html="$md.render(article.body)"></div>
-        <vue-disqus shortname="personal-12" :identifier="article.id" :url="this.id"></vue-disqus>
+        <!-- <vue-disqus shortname="personal-12" :identifier="article.id" :url="this.id"></vue-disqus> -->
        
       </div>
     </article>
@@ -21,13 +22,14 @@
 
 <script>
   import pagination from '@/components/blog/Pagination.vue';
+  import scrollbar from '@/components/elements/Scrollbar.vue';
 
   export default {
     name: 'index',
     head () {
       
       let description = this.article.description;
-      console.log(description);
+      
       return {
         title: `${this.article.title}`,
         meta: [
@@ -55,11 +57,6 @@
             hid: 'og:description',
             name: 'og:description',
             content: description
-          },
-          {
-            hid: 'og:url',
-            name: 'og:url',
-            content: window.location.href
           },
           {
             hid: 'og:type',
@@ -134,7 +131,7 @@
         return `${day}.${month}.${year}`;
       }
     },
-    components: {pagination}
+    components: {pagination, scrollbar}
   }
 </script>
 <style lang='scss'>
