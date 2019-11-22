@@ -1,6 +1,6 @@
 <template>
 	<nav class='toolbar-menu'> 
-		<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/blog">
+		<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/">
     		Home
     	</nuxt-link>
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/about">
