@@ -11,13 +11,12 @@
 <script>
 	import Logo from './partials/Logo';
 	import ToolbarMenu from './partials/ToolbarMenu';
-	import Socials from './partials/Socials';
 	import Copyright from './partials/Copyright';
 	
 	export default {
 		name: 'toolbar',
 		components: {
-			Logo, ToolbarMenu, Socials, Copyright
+			Logo, ToolbarMenu, Copyright
 		}
 	}
 </script>

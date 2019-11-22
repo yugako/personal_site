@@ -219,20 +219,30 @@
 
         pre {
           background: $light;
-          
           border-left: 3px solid $accent;
           color: $text-color;
           page-break-inside: avoid;
           font-family: monospace;
-          font-size: 15px;
+          letter-spacing: normal;
+          font-size: 13px;
           max-width: 100%;
           overflow: auto;
-          padding: 0.1em 1.5em;
+          padding: 0.3em 1.5em;
           display: block;
           overflow-wrap: break-all;
-          white-space: normal;
+          white-space: pre;
           @include sm-size-max {
             font-size: 12px;
+          }
+          
+          
+        }
+        p + pre {
+          &:first-child {
+            padding-top: 1.5rem;
+          }
+          &:last-child {
+            padding-bottom: 1.5rem;
           }
         }
     }

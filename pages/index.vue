@@ -7,16 +7,18 @@
         <p class="home-content__subtitle"><span class="typing"></span></p>
       </vue-typed-js>
       <div class="home-content__buttons">
-          <g-button link='/about' text='Want to know more?' />
+          <g-button link='/portfolio' text='Go to Portfolio' />
           <g-button external='https://github.com/yugako' text='View My GitHub' />
       </div>
-     <!-- <loader /> -->
+
+      <Socials />
     </div>
   </section>
 </template>
 
 <script>
 import GButton from '@/components/elements/GButton.vue';
+import Socials from '@/components/elements/Socials.vue';
 export default {
     name: '',
     head() {
@@ -37,7 +39,7 @@ export default {
       }
     },
     components: {
-      GButton
+      GButton, Socials
     },
     computed: {
       Expanded() {
@@ -99,6 +101,7 @@ export default {
     &__buttons {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 20px;
       .g-button {
         display: block;
         margin-right: 50px;
