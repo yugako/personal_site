@@ -1,19 +1,19 @@
 <template>
 	<nav class='toolbar-menu'> 
-		<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/">
-    		Home
+		<nuxt-link class="toolbar-menu__link" exact active-class='link-active' to="/">
+    		<i class="fas fa-house-damage"></i>
     	</nuxt-link>
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/about">
-    		About
+    		<i class="fas fa-user-tie"></i>
     	</nuxt-link>
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/blog">
-    		Blog
+    		<i class="fas fa-receipt"></i>
     	</nuxt-link>
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/portfolio">
-    		Portfolio
+    		<i class="fas fa-briefcase"></i>
     	</nuxt-link>
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/contact">
-    		Contact
+    		<i class="fas fa-envelope"></i>
     	</nuxt-link>    
 	</nav>
 </template>
@@ -35,7 +35,10 @@
 			display: block;
 			text-align: center;
 			text-decoration: none;
-			margin-bottom: 7px;
+			margin: 30px 0px;
+			i {
+				font-size: 27px;
+			}
 			&:hover {
 				color: $accent;
 			}

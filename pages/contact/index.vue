@@ -25,7 +25,7 @@
 </script>
 <style lang='scss'>
   .contact {
-    background-color: rgba($dark, 0.9);
+    background-color: $light-dark;
     
     &-title {
       padding-top: 60px;

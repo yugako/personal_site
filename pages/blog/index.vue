@@ -29,8 +29,7 @@
 </script>
 <style lang='scss'>
   .blog {
-    background-color: rgba($dark, 0.9);
-    &-articles {
+      background-color: $light-dark;
       padding-top: 110px;
       @include md-size-max {
         padding-top: 80px;
@@ -38,7 +37,6 @@
       @include md-size-max {
         padding-top: 70px;
       }
-    }
     &-title {
       padding-top: 60px;
       @include md-size-max {

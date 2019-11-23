@@ -3,7 +3,6 @@
 		<section class="toolbar">
 			<Logo />
 			<toolbar-menu />
-			<Socials />
 			<Copyright />
 		</section>
 	</transition>

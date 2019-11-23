@@ -136,7 +136,7 @@
 </script>
 <style lang='scss'>
   .blog-single {
-    background-color: rgba($dark, 0.9);
+    background-color: $light-dark;
     padding-bottom: 100px;
 
     &__img {

@@ -39,10 +39,10 @@
 </script>
 <style lang='scss'>
 	.about {
-		background-color: rgba($dark, 0.9);
+		background-color: $light-dark;
 		font-family: $secondary-font;
 		padding-top: 60px;
-	  padding-bottom: 110px;
+	  	padding-bottom: 110px;
 	  @include md-size-max {
 	  	padding-top: 40px;
 	  	padding-bottom: 80px;
