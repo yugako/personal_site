@@ -45,6 +45,9 @@
 	    width: 100%;
 	    height: 3px;
 	    border-radius: 0px;
+	    @include sm-size-max {
+	    	left: 0;
+	    }
 	}
 
 	/* Progress bar container */

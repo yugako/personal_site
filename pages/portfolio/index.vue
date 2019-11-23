@@ -130,6 +130,7 @@
     color: $white;
     padding: 40px;
     background-color: $light-dark;
+    text-align: center;
     
     &-title {
       padding-top: 60px;
@@ -184,20 +185,41 @@
     }
     &-filter {
       &__list {
-        display: flex;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
         margin-bottom: 50px;
+        position: relative;
+        padding: 0 20px;
+        background-color: $dark;
+        box-shadow: 0 0 10px 0px rgba($white, .1);
+        border-radius: 50px;
+        @include sm-size-max {
+          display: flex;
+
+        }
       }
       &__item {
         margin: 0px 10px;
         text-align: center;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 25px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        &.active {
+          color: $dark;
+          background-color: $accent;
+          transition: all .3s;
+           border-radius: 50px;
+        }
         &:hover {
           cursor: pointer;
         }
         
-        &.active {
-          color: $accent;
-        }
       }
     }
     .none {

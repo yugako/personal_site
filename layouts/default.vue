@@ -27,7 +27,7 @@
           const self = this;
 
           window.addEventListener('resize', () => {
-              if (window.innerWidth > 768) {
+              if (window.innerWidth > 767) {
                   if (!self.IsToolbar) {
                       self.$store.commit('isMenuOpened');
                   }
