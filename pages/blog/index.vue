@@ -29,19 +29,22 @@
 </script>
 <style lang='scss'>
   .blog {
-      background-color: $light-dark;
-      padding-top: 110px;
-      @include md-size-max {
-        padding-top: 80px;
-      }
-      @include md-size-max {
-        padding-top: 70px;
-      }
+    background-color: $light-dark;
+    padding-top: 110px;
+    @include md-size-max {
+      padding-top: 80px;
+    }
+    @include md-size-max {
+      padding-top: 70px;
+    }
     &-title {
       padding-top: 60px;
       @include md-size-max {
         padding-top: 30px;
       }
+    }
+    &-articles {
+      margin-top: 80px;
     }
   }
 </style>
