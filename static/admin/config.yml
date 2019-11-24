@@ -34,4 +34,5 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - { label: 'Demo link', name: 'demo', widget: 'string' }
       - { label: 'Source link', name: 'source', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
