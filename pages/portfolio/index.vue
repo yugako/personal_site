@@ -8,7 +8,7 @@
             <li 
               class="portfolio-filter__item" 
               v-for='filter in worksCat' 
-              :key='filter.name' 
+              :key='filter.param' 
               :class='{active: filter.param === activeName}' 
               @click='filterWorks(filter.param)'
               >{{filter.name}}
@@ -17,21 +17,23 @@
           <!-- /.portfilio-filter__list -->
          </div>
           <!-- /.portfolio-filter -->
-        <transition-group class='row' name='slide-fade' tag='div'>
+        <transition-group class='row' name='bounce' tag='div'>
           <div 
-            class='col-12 col-md-6 col-lg-3' 
+            class='col-12 col-md-6 col-lg-4' 
             v-for='work in filtered' 
             :key='work.title'
           >
             <div class="portfolio-item-wrapper">
-              <div class="portfolio-item" :style="{'background-image': `url(${work.thumbnail})`}">
+              <div class="portfolio-item">
+                  <div class="portfolio-item__img" :style="{'background-image': `url(${work.thumbnail})`}"></div>
+                  <div class="portfolio-item__title">{{work.title}}</div>
                   <div class="portfolio-item__links">
-                  <span title="Show details" @click.prevent='showDetails(work)' class="portfolio-item__link">
-                   Details
-                  </span>
-                  <a title="Go to demo" :href="work.url" class="portfolio-item__link">
-                   Demo
-                  </a>
+                    <span title="Show details" @click.prevent='showDetails(work)' class="portfolio-item__link">
+                     Details
+                    </span>
+                    <a title="Go to demo" target="_blank" :href="work.demo" class="portfolio-item__link">
+                     Demo
+                    </a>
                 </div>
               </div>
             </div>
@@ -39,10 +41,12 @@
           </div>
         </transition-group>
         <div class="none" v-if='filtered.length === 0'>Works not found!</div>
-        <Popup 
-          :data='popupData'
-          v-if='isPopupOpened' 
-        />
+        <transition name='bounce'>
+          <Popup 
+            :data='popupData'
+            v-if='isPopupOpened' 
+          />
+        </transition>
      
     </div>
   </section>
@@ -90,13 +94,13 @@
       filterWorks(cat) {
           this.filtered = [];
           if(cat) {
-          this.clearActive();
-          this.filtered = this.works.filter(item => item.cat === cat);
-          cat == 'sites' ? this.activeName = 'sites' : this.activeName = 'personal';
+            this.clearActive();
+            this.filtered = this.works.filter(item => item.category === cat);
+            cat == 'sites' ? this.activeName = 'sites' : this.activeName = 'personal';
           } else {
-          this.clearActive();
-          this.filtered = this.works;
-          this.activeName = '';
+            this.clearActive();
+            this.filtered = this.works;
+            this.activeName = '';
           }
       },
       clearActive() {
@@ -129,9 +133,9 @@
 <style lang='scss'>
   .portfolio {
     color: $white;
-    padding: 40px;
     background-color: $light-dark;
     text-align: center;
+    padding-bottom: 80px;
     
     &-title {
       padding-top: 60px;
@@ -140,26 +144,84 @@
         padding-top: 30px;
       }
     }
-  
+    &-wrapper {
+        overflow: hidden;
+      }
     &-item {
       width: 100%;
-      padding-top: 75%;
-      background-size: cover;
-      margin-bottom: 20px;
-      background-position: center;
-      filter: grayscale(1);
       overflow: hidden;
-      &__links {
+      position: relative;
+   
+      &__img {
+        padding-top: 75%;
+        background-size: cover;
+        position: relative;
+        background-position: center;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          background-color: rgba($accent, 0);
+          transition: all 0.3s ease;
+        }
+      }
+      $p: &;
+      
+      &:hover {
+        #{$p}__img {
+          filter: blur(5px);
+          transform: scale(1.1);
+          z-index: 99;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: rgba($accent, 0.6);
+            transition: all 0.3s ease;
+            transform: scale(1.1);
+          }
+        }
+        #{$p}__title {
+          opacity: 1;
+          z-index: 100;
+        }
+        #{$p}__link {
+          z-index: 100;
+          &:first-child {
+            transform: translateX(0%);
+          }
+          &:last-child {
+            transform: translateX(0%);
+          }
+        }
+        
+      }
+      &__title {
         position: absolute;
-        bottom: -50px;
-        left: 0;
-        background-color: $dark;
-        color: $accent;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+      &__links {
+        color: $white;
         width: 100%;
         padding: 7px 15px;
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+        position: absolute;
+        bottom: 0;
+
         a {
           color: inherit;
           text-decoration: none;
@@ -171,18 +233,18 @@
           bottom: 0;
         }
       }
-      &-wrapper {
-        overflow: hidden;
-      }
-      $links: &;
-      &:hover {
-        filter: grayscale(0);
-        transform: scale(1.1);
-        #{$links}__links {
-          bottom: 0;
-          transition-delay: 0.4s;
+
+      &__link {
+        &:first-child {
+          transform: translateX(-200%);
+        }
+        &:last-child {
+          transform: translateX(200%);
         }
       }
+      
+      
+      
     }
     &-filter {
       &__list {
@@ -197,6 +259,7 @@
         border-radius: 50px;
         @include sm-size-max {
           display: flex;
+          flex-direction: column;
 
         }
       }

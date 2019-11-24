@@ -83,6 +83,7 @@ module.exports = {
   */
   plugins: [
     '~plugins/vue-typed',
+    '~plugins/vue-transition',
     '~plugins/disqus',
   ],
 

@@ -7,9 +7,9 @@
 
     <!-- Content view -->
     <div class="app-wrapp" @click.stop='hideMenu'>
-      <transition name='slide-fade'>
+      <vue-page-transition name="flip-y">
         <nuxt class='app-view'  :class='{"toolbar-active": IsToolbar}' />
-      </transition>
+      </vue-page-transition>
     </div>  
     
    
@@ -66,6 +66,10 @@
     padding: 0;
     margin: 0;
     transition: all 0.3s;
+  }
+  :root {
+    --overlay-bg: $accent;
+    --transition-duration: .35s;
   }
 
   ::-webkit-scrollbar-track {
@@ -143,16 +147,15 @@
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  animation: slide .5s;
 }
 .slide-fade-leave-active {
-  transition: all .3s ease;
+  animation: slide .5s reverse;
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(-100%);
-  opacity: 0;
-}
+// .slide-fade-enter, .slide-fade-leave-to
+//   transform: translateX(-100%);
+//   opacity: 0;
+// }
 
 // Bounce
 
@@ -167,10 +170,19 @@
     transform: scale(0);
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
