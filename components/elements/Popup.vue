@@ -65,6 +65,9 @@
 				width: 100%;
 				height: auto;
 				margin: auto;
+				@include sm-size-max {
+					max-width: 90vw;
+				}
 			}
 			
 		}
@@ -84,6 +87,9 @@
 			max-width: 50vw;
 			margin: 0 auto;
 			width: 100%;
+			@include sm-size-max {
+				max-width: 90vw;
+			}
 			a {
 				color: $accent;
 			}
@@ -95,7 +101,7 @@
 				display: flex;
 			}
 			&__descr {
-				text-align: justify;
+				text-align: left;
 				margin-bottom: 20px;
 				ul {
 					margin-top: 15px;
