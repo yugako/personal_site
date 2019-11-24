@@ -147,15 +147,15 @@
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  animation: slide .5s;
+ transition: all 0.5s ease;
 }
 .slide-fade-leave-active {
-  animation: slide .5s reverse;
+  transition: all 0.5s ease;
 }
-// .slide-fade-enter, .slide-fade-leave-to
-//   transform: translateX(-100%);
-//   opacity: 0;
-// }
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
 
 // Bounce
 
