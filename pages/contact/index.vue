@@ -2,7 +2,7 @@
   <section class="contact">
     <div class="container">
       <g-title class='contact-title' text='Contact' />
-      <form @submit.prevent='handleForm' method="post" class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
+      <form netlify @submit.prevent='handleForm' method="post" class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
                 <input type="text" name="name" id="name" placeholder="Name *">
@@ -16,11 +16,11 @@
             <div class="col-lg-12 col-sm-12 text-center">
 
                 <button type="submit"  class="g-button">Send Message</button>
-                <div id="loader" v-if='fail'>
+               <!--  <div id="loader" v-if='fail'>
                     <i class="fas fa-sync"></i>
-                </div>
+                </div> -->
             </div>
-            <div class="col-lg-12 col-sm-12">
+            <!-- <div class="col-lg-12 col-sm-12">
               <div class="error-messages">
                 <div id="success" v-if='success'>
                   <i class="far fa-check-circle"></i>Thank you, your message has been sent.
@@ -29,7 +29,7 @@
                   <i class="far fa-times-circle"></i>Error occurred while sending email. Please try again later.
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
       </form>
     </div>
