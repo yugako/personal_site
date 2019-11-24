@@ -9,8 +9,12 @@
 			</div>
 			<div class="popup-content">
 				<div class='popup-content__descr' v-html="$md.render(data.body)"></div>
-				<g-button class='popup-content__button' :external='data.demo' text='View Demo' />
+				<div class="popup-content__buttons">
+					<g-button v-if='data.demo' class='popup-content__button' :external='data.demo' text='View Demo' />
+					<g-button v-if='data.source' class='popup-content__button' :external='data.source' text='Source' />
+				</div>
 			</div>
+			
 			<span @click='closePopup' class="popup__close">&times;</span>
 		</div>
 	</transition>
@@ -85,6 +89,10 @@
 			}
 			&__button {
 				text-align: left;
+				margin-right: 30px;
+			}
+			&__buttons {
+				display: flex;
 			}
 			&__descr {
 				text-align: justify;
