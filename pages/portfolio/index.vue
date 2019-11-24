@@ -19,19 +19,18 @@
           <!-- /.portfolio-filter -->
         <transition-group class='row' name='slide-fade' tag='div'>
           <div 
-            class='col-12' 
-            :class='{"col-12 col-md-6 col-lg-3": Expanded}' 
+            class='col-12 col-md-6 col-lg-3' 
             v-for='work in filtered' 
-            :key='work.id'
+            :key='work.title'
           >
             <div class="portfolio-item-wrapper">
-              <div class="portfolio-item" :style="{'background-image': `url(${work.img})`}">
+              <div class="portfolio-item" :style="{'background-image': `url(${work.thumbnail})`}">
                   <div class="portfolio-item__links">
                   <span title="Show details" @click.prevent='showDetails(work)' class="portfolio-item__link">
                    Details
                   </span>
                   <a title="Go to demo" :href="work.url" class="portfolio-item__link">
-                   Source
+                   Demo
                   </a>
                 </div>
               </div>
@@ -66,7 +65,6 @@
       data () {
       return {
         activeName: '',
-        works: [],
         filtered: [],
         worksCat: [
           {
@@ -119,6 +117,9 @@
         },
         popupData() {
           return this.$store.getters.PopupData;
+        },
+        works() {
+          return this.$store.state.works;
         }
       },
         

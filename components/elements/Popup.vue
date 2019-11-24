@@ -3,7 +3,7 @@
 		<div class="popup">
 			<div class="popup__content">
 				<h2>{{data.title}}</h2>
-				<div class='popup__content-descr' v-html='data.describe'></div>
+				<div class='popup__content-descr' v-html="$md.render(data.body)"></div>
 			</div>
 			<span @click='closePopup' class="popup__close">&times;</span>
 		</div>

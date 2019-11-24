@@ -4,6 +4,7 @@ export const state = () => ({
   popupData: '',
   menuOpened: true,
   blogPosts: [],
+  works: [],
 
 })
 
@@ -26,17 +27,32 @@ export const mutations = {
   setBlogPosts(state, list) {
     state.blogPosts = list;
   },
+  setWorks(state, list) {
+    state.works = list;
+  },
 }
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    let files = await require.context('~/assets/content/blog/', false, /\.json$/);
-    let blogPosts = files.keys().map(key => {
-      let res = files(key);
-      res.slug = key.slice(2, -5);
-      return res;
+    /* Get Posts */
+    let postFiles = await require.context('~/assets/content/blog/', false, /\.json$/);
+
+    let blogPosts = postFiles.keys().map(key => {
+    let resPost = postFiles(key);
+    resPost.slug = key.slice(2, -5);
+      return resPost;
     });
     await commit('setBlogPosts', blogPosts);
+    
+    /* Get works */
+    let workFiles = await require.context('~/assets/content/portfolio/', false, /\.json$/);
+
+    let works = workFiles.keys().map(key => {
+    let resWorks = workFiles(key);
+    resWorks.slug = key.slice(2, -5);
+      return resWorks;
+    });
+    await commit('setWorks', works);
   },
 }
 

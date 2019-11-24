@@ -17,7 +17,6 @@
 				    <g-button 
 				      	:link="'/blog/' + article.slug"
 				      	text='Read More'
-				      	role="menuitem"
 				    />
 			    </article>
 			</div>	
