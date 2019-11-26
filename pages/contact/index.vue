@@ -2,7 +2,8 @@
   <section class="contact">
     <div class="container">
       <g-title class='contact-title' text='Contact' />
-      <form netlify @submit.prevent='handleForm' method="post" class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
+      <form netlify netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
+      		<input type="hidden" name="contact-form" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
                 <input type="text" name="name" id="name" placeholder="Name *">
