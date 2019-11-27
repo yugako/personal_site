@@ -2,7 +2,7 @@
   <section class="contact">
     <div class="container">
       <g-title class='contact-title' text='Contact' />
-      <form data-netlify data-netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
+      <form data-netlify data-netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form" id="contact-form">
       	<input type="hidden" name="form-name" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
@@ -15,11 +15,11 @@
                 <textarea name="Message" v-model='form.message' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
-
-                <button type="submit" @click.prevent="handleSubmit" class="g-button">Send Message</button>
-                <div id="loader" v-if='fail'>
+            	<div id="loader" v-if='loader'>
                     <i class="fas fa-sync"></i>
                 </div>
+                <button type="submit" @click.prevent="handleSubmit" class="g-button">Send Message</button>
+                
             </div>
             <div class="col-lg-12 col-sm-12">
               <div class="error-messages">
@@ -53,6 +53,7 @@
     	return {
         success: false,
         fail: false,
+        loader: false,
         form: {
         	name: '',
 	        email: '',
@@ -70,23 +71,29 @@
 	        .join('&');
 	    },
 	    handleSubmit() {
-	    	this.fail = true;
-	      fetch('/', {
-	        method: 'POST',
-	        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	        body: this.encode({ 'form-name': 'contact-form', ...this.form }),
-	      })
-	        .then(() => {this.success = true;})
-	        .catch(error => {this.fail = false;});
-	      setTimeout(() => {
-	      	this.success = false;
-	      	this.fail = false;
+	    	this.loader = true;
+		    fetch('/', {
+		        method: 'POST',
+		        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+		        body: this.encode({ 'form-name': 'contact-form', ...this.form }),
+		    })
+	        .then(() => {
+	        	this.loader = false;
+	        	this.success = true;
+	        })
+	        .then(() => {
+	        	setTimeout(() => {
+			      	this.success = false;
+			      	this.form.name = '';
+			      	this.form.email = '';
+			      	this.form.message = '';
 
-	      	this.form.name = '';
-	      	this.form.email = '';
-	      	this.form.message = '';
-
-	      }, 3000);
+			    }, 3000);
+	        })
+	        .catch(error => {
+	        	this.fail = true;
+	        });
+	      
 	    },
     },
     components: {
@@ -142,7 +149,7 @@
       }
       textarea {
         height: 100px;
-        margin: 50px 0;
+        margin: 50px 0 20px;
         resize: vertical;
 
       }
@@ -151,25 +158,75 @@
         border: none;
         display: block;
         margin: auto;
+        margin-bottom: 20px;
         font-family: $primary-font;
         &:focus, &:active {
           outline: none;
           transition: all 0.3s ease-in-out;
         }
       }
-      #success {
-        width: 100%;
-        color: $white;
-        padding: 10px 10px;
-        margin-bottom: 5px;
-        font-size: 14px;
-        text-align: center;
-        i {
-          padding-top: 5px;
-          margin-right: 10px;
-          margin-left: 5px;
-        }
-      }
+      	#success {
+	        width: 100%;
+	        color: $white;
+	        padding: 10px 10px;
+	        margin-bottom: 5px;
+	        font-size: 14px;
+	        text-align: center;
+	        i {
+	          padding-top: 5px;
+	          margin-right: 10px;
+	          margin-left: 5px;
+	        }
+	    }
+      	#error {
+		    width: 100%;
+		    color: $white;
+		    padding: 10px 10px;
+		    margin-bottom: 5px;
+		    font-size: 14px;
+		    text-align: center;
+
+		    i {
+		        color: #ca1d1d;
+		        padding-top: 5px;
+		        margin-right: 10px;
+		        margin-left: 5px;
+		    }
+		}
+		#loader {
+			text-align: center;
+			margin-bottom: 20px;
+			i {
+				display: inline-block;
+			    font-size: 23px;
+			    color: $white;
+			    -webkit-animation: rotating linear 2s infinite;
+			    animation: rotating linear 2s infinite;
+
+			}
+		}
+		/* Animation rotating */ 
+		@-webkit-keyframes rotating {
+			from {
+				-webkit-transform: rotate(0deg);
+						transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+						transform: rotate(360deg);
+			}
+		}
+
+		@keyframes rotating {
+			from {
+				-webkit-transform: rotate(0deg);
+						transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+						transform: rotate(360deg);
+			}
+		}
     }
 
   }
