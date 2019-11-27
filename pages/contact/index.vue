@@ -2,23 +2,23 @@
   <section class="contact">
     <div class="container">
       <g-title class='contact-title' text='Contact' />
-      <form data-netlify data-netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form" id="contact-form">
+      <form @submit.prevent="handleSubmit" data-netlify data-netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form" id="contact-form">
       	<input type="hidden" name="form-name" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <input type="text" required v-model='form.name' name="Name" id="name" placeholder="Name *">
+                <input type="text" required v-model='form.name' name="name" id="name" placeholder="Name *">
             </div>
             <div class="col-lg-6 col-sm-12">
-                <input type="email" required v-model='form.email' name="Email" id="email" placeholder="Email *">
+                <input type="email" required v-model='form.email' name="email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="Message" required v-model='form.message' id="note" placeholder="Your Message"></textarea>
+                <textarea name="Message" required v-model='form.note' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
             	<div id="loader" v-if='loader'>
                     <i class="fas fa-sync"></i>
                 </div>
-                <button type="submit" @click.prevent="handleSubmit" class="g-button">Send Message</button>
+                <button type="submit" class="g-button">Send Message</button>
                 
             </div>
             <div class="col-lg-12 col-sm-12">
@@ -57,7 +57,7 @@
         form: {
         	name: '',
 	        email: '',
-	        message: '',
+	        note: '',
         }
        
       }
