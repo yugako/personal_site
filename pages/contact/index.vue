@@ -12,7 +12,7 @@
                 <input type="email" required v-model='form.email' name="email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="Message" required v-model='form.note' id="note" placeholder="Your Message"></textarea>
+                <textarea name="message" required v-model='form.note' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
             	<div id="loader" v-if='loader'>
@@ -80,6 +80,17 @@
 	        .then(() => {
 	        	this.loader = false;
 	        	this.success = true;
+	        })
+	        .then(() => {
+	        	setTimeout(() => {
+	        		this.success = false;
+
+	        		this.form.name = '';
+	        		this.form.email = '';
+	        		this.form.note = '';
+	        	}, 5000);
+	        	
+
 	        })
 	        .catch(error => {
 	        	this.fail = true;
