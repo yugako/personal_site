@@ -2,21 +2,21 @@
   <section class="contact">
     <div class="container">
       <g-title class='contact-title' text='Contact' />
-      <form netlify netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
-      		<input type="hidden" name="contact-form" value="contact-form" />
+      <form data-netlify data-netlify-honeypot="bot-field" method="post" name='contact-form' class="contact-form contact-valid" id="contact-form" novalidate="novalidate">
+      	<input type="hidden" name="form-name" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <input type="text" name="name" id="name" placeholder="Name *">
+                <input type="text" v-model='name' name="name" id="name" placeholder="Name *">
             </div>
             <div class="col-lg-6 col-sm-12">
-                <input type="email" name="email" id="email" placeholder="Email *">
+                <input type="email" v-model='email' name="email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="note" id="note" placeholder="Your Message"></textarea>
+                <textarea name="note" v-model='note' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
 
-                <button type="submit"  class="g-button">Send Message</button>
+                <button type="submit" @click.prevent="handleSubmit" class="g-button">Send Message</button>
                <!--  <div id="loader" v-if='fail'>
                     <i class="fas fa-sync"></i>
                 </div> -->
@@ -52,16 +52,29 @@
     data() {
     	return {
         success: false,
-        fail: false
+        fail: false,
+        name: '',
+        email: '',
+        note: '',
       }
     },
     methods: {
-      handleForm() {
-        this.success = true;
-        setTimeout(function () {
-          this.success = false;
-        }, 3000);
-      }
+      encode(data) {
+	      return Object.keys(data)
+	        .map(
+	          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+	        )
+	        .join('&');
+	    },
+	    handleSubmit() {
+	      fetch('/', {
+	        method: 'POST',
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+	        body: this.encode({ 'form-name': 'contact-form', ...this.form }),
+	      })
+	        .then(() => alert('Success!'))
+	        .catch(error => alert(error));
+	    },
     },
     components: {
       GTitle, GButton
