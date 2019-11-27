@@ -64,17 +64,17 @@ export default {
     align-items: center;
     flex-direction: column;
     &__title {
-      font-size: 5rem;
+      font-size: 7rem;
       color: $white;
       text-align: center;
       @include md-size-max {
-        font-size: 4rem;
+        font-size: 5rem;
       }
       @include sm-size-max {
-        font-size: 3rem;
+        font-size: 4rem;
       }
       @include xs-size-max {
-        font-size: 2.5rem;
+        font-size: 2.9rem;
       }
       
     }
@@ -84,13 +84,13 @@ export default {
       text-align: center;
       margin-bottom: 1rem;
       @include md-size-max {
-        font-size: 2.5rem;
-      }
-      @include sm-size-max {
         font-size: 2rem;
       }
-      @include xs-size-max {
+      @include sm-size-max {
         font-size: 1.5rem;
+      }
+      @include xs-size-max {
+        font-size: 1.2rem;
       }
     }
     @include sm-size-max {
@@ -102,16 +102,18 @@ export default {
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
-      .g-button {
-        display: block;
+      .g-button--wrapper {
         margin-right: 50px;
+        text-align: center;
       }
-      @include sm-size-max {
-        flex-direction: column;
+      @include xs-size-max {
         justify-content: center;
-        .g-button {
+        flex-direction: column;
+        .g-button--wrapper {
           margin-right: 0;
-          margin-bottom: 20px;
+          &:first-child {
+            margin-bottom: 40px;
+          }
         }
       }
     }

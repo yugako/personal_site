@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="g-button--wrapper">
 		<nuxt-link v-if='link'  class="g-button" :to="link">
 	    	{{text}}
 	    </nuxt-link>

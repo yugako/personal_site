@@ -6,13 +6,13 @@
       	<input type="hidden" name="form-name" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <input type="text" v-model='form.name' name="Name" id="name" placeholder="Name *">
+                <input type="text" required v-model='form.name' name="Name" id="name" placeholder="Name *">
             </div>
             <div class="col-lg-6 col-sm-12">
-                <input type="email" v-model='form.email' name="Email" id="email" placeholder="Email *">
+                <input type="email" required v-model='form.email' name="Email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="Message" v-model='form.message' id="note" placeholder="Your Message"></textarea>
+                <textarea name="Message" required v-model='form.message' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
             	<div id="loader" v-if='loader'>
@@ -80,15 +80,6 @@
 	        .then(() => {
 	        	this.loader = false;
 	        	this.success = true;
-	        })
-	        .then(() => {
-	        	setTimeout(() => {
-			      	this.success = false;
-			      	this.form.name = '';
-			      	this.form.email = '';
-			      	this.form.message = '';
-
-			    }, 3000);
 	        })
 	        .catch(error => {
 	        	this.fail = true;
