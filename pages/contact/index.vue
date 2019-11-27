@@ -12,7 +12,7 @@
                 <input type="email" required v-model='form.email' name="email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="message" required v-model='form.note' id="note" placeholder="Your Message"></textarea>
+                <textarea name="note" required v-model='form.note' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
             	<div id="loader" v-if='loader'>
