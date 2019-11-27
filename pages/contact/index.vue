@@ -6,22 +6,22 @@
       	<input type="hidden" name="form-name" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <input type="text" v-model='form.name' name="name" id="name" placeholder="Name *">
+                <input type="text" v-model='form.name' name="Name" id="name" placeholder="Name *">
             </div>
             <div class="col-lg-6 col-sm-12">
-                <input type="email" v-model='form.email' name="email" id="email" placeholder="Email *">
+                <input type="email" v-model='form.email' name="Email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="note" v-model='form.note' id="note" placeholder="Your Message"></textarea>
+                <textarea name="Message" v-model='form.message' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
 
                 <button type="submit" @click.prevent="handleSubmit" class="g-button">Send Message</button>
-               <!--  <div id="loader" v-if='fail'>
+                <div id="loader" v-if='fail'>
                     <i class="fas fa-sync"></i>
-                </div> -->
+                </div>
             </div>
-            <!-- <div class="col-lg-12 col-sm-12">
+            <div class="col-lg-12 col-sm-12">
               <div class="error-messages">
                 <div id="success" v-if='success'>
                   <i class="far fa-check-circle"></i>Thank you, your message has been sent.
@@ -30,7 +30,7 @@
                   <i class="far fa-times-circle"></i>Error occurred while sending email. Please try again later.
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
       </form>
     </div>
@@ -56,7 +56,7 @@
         form: {
         	name: '',
 	        email: '',
-	        note: '',
+	        message: '',
         }
        
       }
@@ -70,13 +70,25 @@
 	        .join('&');
 	    },
 	    handleSubmit() {
+	    	this.fail = true;
 	      fetch('/', {
 	        method: 'POST',
 	        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 	        body: this.encode({ 'form-name': 'contact-form', ...this.form }),
 	      })
-	        .then(() => alert('Success!'))
-	        .catch(error => alert(error));
+	        .then(() => {this.success = true;})
+	        .catch(error => {this.fail = false;});
+	      setTimeout(() => {
+	      	this.success = false;
+	      	this.fail = false;
+
+	      	this.form.name = '';
+	      	this.form.email = '';
+	      	this.form.message = '';
+
+	      }, 3000);
+
+	      this.form
 	    },
     },
     components: {
