@@ -87,8 +87,6 @@
 	      	this.form.message = '';
 
 	      }, 3000);
-
-	      this.form
 	    },
     },
     components: {
