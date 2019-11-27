@@ -6,13 +6,13 @@
       	<input type="hidden" name="form-name" value="contact-form" />
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <input type="text" v-model='name' name="name" id="name" placeholder="Name *">
+                <input type="text" v-model='form.name' name="name" id="name" placeholder="Name *">
             </div>
             <div class="col-lg-6 col-sm-12">
-                <input type="email" v-model='email' name="email" id="email" placeholder="Email *">
+                <input type="email" v-model='form.email' name="email" id="email" placeholder="Email *">
             </div>
             <div class="col-lg-12 col-sm-12">
-                <textarea name="note" v-model='note' id="note" placeholder="Your Message"></textarea>
+                <textarea name="note" v-model='form.note' id="note" placeholder="Your Message"></textarea>
             </div>
             <div class="col-lg-12 col-sm-12 text-center">
 
@@ -53,9 +53,12 @@
     	return {
         success: false,
         fail: false,
-        name: '',
-        email: '',
-        note: '',
+        form: {
+        	name: '',
+	        email: '',
+	        note: '',
+        }
+       
       }
     },
     methods: {
