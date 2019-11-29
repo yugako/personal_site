@@ -1,8 +1,8 @@
 {
   "title": "Sokolya",
   "thumbnail": "/img/sokolya.jpg",
-  "demo": "#",
+  "demo": "http://sk.adr.com.ua/",
   "source": "#",
   "category": "sites",
-  "body": "http://sk.adr.com.ua/"
+  "body": "Site was developed by order from Sokolian village council.Main goal was creating project from scratch(including design, markup, CMS integration). In this resource you can find general info about village, history, customs and traditions, last news from village life.\n\n**Deadline**: november - december 2017"
 }
