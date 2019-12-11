@@ -136,12 +136,16 @@
     background-color: $light-dark;
     text-align: center;
     padding-bottom: 80px;
+    @include md-size-max {
+      padding-bottom: 35px;
+    }
     
     &-title {
       padding-top: 60px;
-      margin-bottom: 110px;
+      margin-bottom: 80px;
       @include md-size-max {
         padding-top: 30px;
+        margin-bottom: 60px;
       }
     }
     &-wrapper {
@@ -151,6 +155,11 @@
       width: 100%;
       overflow: hidden;
       position: relative;
+      margin-bottom: 30px;
+
+      @include xs-size-max {
+        margin-bottom: 20px;
+      }
    
       &__img {
         padding-top: 75%;

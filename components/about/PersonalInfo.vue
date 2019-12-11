@@ -46,10 +46,10 @@
 			-webkit-transition: all .3s ease-in-out;
 			transition: all .3s ease-in-out;
 			border-radius: 10px;
-			margin-bottom: 105px;
+			margin-bottom: 65px;
 			@include md-size-max {
 				margin-bottom: 40px;
-				padding-bottom: 40px;
+				padding-bottom: 45px;
 				.column {
 					margin-top: 20px;
 					@include sm-size-max {
@@ -58,6 +58,10 @@
 						}
 					}
 				}
+			}
+
+			@include sm-size-max {
+				margin-bottom: 35px;
 			}
 			
 			&__photo {
@@ -79,7 +83,7 @@
 			&__name {
 				font-size: 1.125rem;
 				color: $white;
-				@include lg-size-max {
+				@include sm-size-max {
 					text-align: center;
 				}
 			}
@@ -101,7 +105,7 @@
 				padding-top: 15px;
 				padding-bottom: 15px;
 				color: $accent;
-				@include lg-size-max {
+				@include sm-size-max {
 					text-align: center;
 				}
 			}

@@ -101,6 +101,7 @@ export default {
     &__buttons {
       display: flex;
       justify-content: space-between;
+      margin-top: 15px;
       margin-bottom: 20px;
       .g-button--wrapper {
         margin-right: 50px;

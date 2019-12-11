@@ -153,7 +153,7 @@
     }
     &__header {
       padding-top: 70px;
-      padding-bottom: 70px;
+      padding-bottom: 40px;
       @include md-size-max {
         padding-top: 50px;
         padding-bottom: 50px;
@@ -218,9 +218,9 @@
         }
 
         pre {
-          background: $light;
+          background: $dark;
           border-left: 3px solid $accent;
-          color: $text-color;
+          color: $light;
           page-break-inside: avoid;
           font-family: monospace;
           letter-spacing: normal;
@@ -233,6 +233,12 @@
           white-space: pre;
           @include sm-size-max {
             font-size: 12px;
+          }
+
+          code {
+            word-break: break-word;
+            font-family: $code-font;
+            letter-spacing: 1.2px;
           }
           
           

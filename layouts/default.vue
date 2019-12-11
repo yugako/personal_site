@@ -42,7 +42,6 @@
         const windowWidth = window.innerWidth;
 
         if (windowWidth < 768 && this.IsToolbar) {
-          console.log('opened')
           this.$store.commit('isMenuOpened');
           this.$store.commit('CheckHamburger');
         }

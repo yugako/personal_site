@@ -107,14 +107,13 @@
   .contact {
     background-color: $light-dark;
     padding-top: 60px;
-    padding-bottom: 110px;
+    padding-bottom: 90px;
     @include md-size-max {
       padding-top: 40px;
       padding-bottom: 80px;
     }
     &-title {
-      padding-top: 60px;
-      margin-bottom: 110px;
+      margin-bottom: 80px;
       @include md-size-max {
         padding-top: 30px;
       }

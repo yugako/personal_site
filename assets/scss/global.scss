@@ -11,6 +11,7 @@
 	// Fonts
 	$primary-font: 'Oswald', sans-serif;
 	$secondary-font: 'Open Sans', sans-serif;
+	$code-font: 'Source Code Pro', monospace;;
 
 /* Mixins */
 
@@ -20,7 +21,7 @@
 		}
 	}
 	@mixin md-size-max {
-		@media (max-width: 1024px) {
+		@media (max-width: 991px) {
 			@content;
 		}
 	}
@@ -31,6 +32,31 @@
 	}
 	@mixin xs-size-max {
 		@media (max-width: 576px) {
+			@content;
+		}
+	}
+
+/************************************************/
+	@mixin xs-size-min {
+		@media (min-width: 320px) {
+			@content;
+		}
+	}
+
+	@mixin sm-size-min {
+		@media (min-width: 768px) {
+			@content;
+		}
+	}
+
+	@mixin md-size-min {
+		@media (min-width: 992px) {
+			@content;
+		}
+	}
+
+	@mixin lg-size-min {
+		@media (min-width: 1200px) {
 			@content;
 		}
 	}

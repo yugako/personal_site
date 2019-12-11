@@ -42,16 +42,25 @@
 		background-color: $light-dark;
 		font-family: $secondary-font;
 		padding-top: 60px;
-	  	padding-bottom: 110px;
-	  @include md-size-max {
-	  	padding-top: 40px;
-	  	padding-bottom: 80px;
-	  }
+	  	padding-bottom: 100px;
+		@include md-size-max {
+		  	padding-top: 60px;
+		  	padding-bottom: 60px;
+		}
 		&-title:first-child {
-		  margin-bottom: 110px;
+		  margin-bottom: 80px;
+		  @include md-size-max {
+		  	margin-bottom: 75px;
+		  }
+		  @include xs-size-max {
+		  	margin-bottom: 70px;
+		  }
 		}
 
-	
+		@include xs-size-max {
+		  	padding-top: 40px;
+		  	padding-bottom: 0px;
+		}
 		
 		
 	}

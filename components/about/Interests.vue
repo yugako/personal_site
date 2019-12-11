@@ -56,8 +56,8 @@
 			-webkit-transition: all .3s ease-in-out;
 			transition: all .3s ease-in-out;
 			border-radius: 10px;
-			margin-top: 110px;
-			margin-bottom: 105px;
+			margin-top: 80px;
+			margin-bottom: 65px;
 			@include md-size-max {
 			  	margin-top: 80px;
 			  	margin-bottom: 40px;

@@ -17,7 +17,7 @@
 		data() {
 			return {
 				checked: true
-			}
+			} 
 		},
 		methods: {
 	        menuOpen () {

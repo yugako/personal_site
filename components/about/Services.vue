@@ -1,7 +1,7 @@
 <template>
 	<div class="about-services">
 		<div class="row">
-			<div class="col col-12 col-md-6" v-for='service in services' :key='service.title'>
+			<div class="col col-12 col-lg-6" v-for='service in services' :key='service.title'>
 				<div class="about-services__item">
 					<i :class="service.icon"></i>
 					<h4 class="about-services__item-title">{{service.title}}</h4>
@@ -59,19 +59,19 @@
 <style lang='scss'>
 	.about {
 		&-services {
-			padding-top: 110px;
-			padding-bottom: 105px;
+			padding-top: 85px;
+			// padding-bottom: 105px;
 			@include md-size-max {
 			  	padding-top: 80px;
-			  	padding-bottom: 60px;
+			  	// padding-bottom: 60px;
 			}
 			@include sm-size-max {
 			  	padding-top: 80px;
-			  	padding-bottom: 40px;
+			  	// padding-bottom: 40px;
 			}
 			.col:last-child {
 				margin-left: 25%;
-				@include sm-size-max {
+				@include md-size-max {
 					margin-left: 0;
 				}
 			} 
