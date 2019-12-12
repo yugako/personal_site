@@ -281,13 +281,13 @@
         font-size: 14px;
         font-weight: 600;
         padding: 10px 25px;
-        -webkit-transition: all .3s;
         transition: all .3s;
+        border-radius: 50px;
         &.active {
           color: $dark;
           background-color: $accent;
           transition: all .3s;
-           border-radius: 50px;
+           
         }
         &:hover {
           cursor: pointer;

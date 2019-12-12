@@ -55,6 +55,13 @@
 		color: $white;
 		z-index: 99999;
 		opacity: 1;
+		overflow-y: auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@include sm-size-max {
+			padding-top: 165px;
+			padding-bottom: 65px;
+		}
 		&-title {
 			margin-bottom: 20px;
 		}
@@ -64,6 +71,8 @@
 				max-width: 50vw;
 				width: 100%;
 				height: auto;
+				max-height: 300px;
+				object-fit: cover;
 				margin: auto;
 				@include sm-size-max {
 					max-width: 90vw;
