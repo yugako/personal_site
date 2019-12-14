@@ -238,7 +238,7 @@
           code {
             word-break: break-word;
             font-family: $code-font;
-            letter-spacing: 1.2px;
+            letter-spacing: normal;
           }
           
           
