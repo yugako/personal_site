@@ -19,7 +19,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.0.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.10.0",
     "vue-disqus": "^3.0.5",
     "vue-page-transition": "^0.2.2",
     "vue-typed-js": "^0.1.2"
