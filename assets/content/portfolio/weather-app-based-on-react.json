@@ -1,0 +1,8 @@
+{
+  "title": "Weather App(based on React)",
+  "thumbnail": "/img/weather.png",
+  "demo": "https://earth-weather.netlify.com/",
+  "source": "https://github.com/yugako/react-weather-app",
+  "category": "personal",
+  "body": "App allows you to see weather using your location or you can search another place. Except this, here you can see weather for a 5 days ahead.\n\n**Deadline**: 15.04.2019-24.04.2019"
+}
