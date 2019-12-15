@@ -3,7 +3,7 @@
  		<div class="row align-items-center">
  				<div class="col-12 col-md-4 col-xl-3">
  					<div class="about-person__photo">
- 						<img class="img-fluid" src="https://scontent.flwo3-1.fna.fbcdn.net/v/t1.0-9/70062120_1080218812148837_2300144141662683136_n.jpg?_nc_cat=108&_nc_oc=AQmra2Tc2a1ySBn85D1c8Rlugyin-5yryJKqudTt_roxfc6WGB5YnrUp0la1Ga6lNzU&_nc_ht=scontent.flwo3-1.fna&oh=21740a93001b7821c4b560998b3c56ed&oe=5E216312" alt='GG'>
+ 						<img class="img-fluid" src="https://scontent.flwo3-1.fna.fbcdn.net/v/t1.0-9/70062120_1080218812148837_2300144141662683136_n.jpg?_nc_cat=108&_nc_oc=AQmra2Tc2a1ySBn85D1c8Rlugyin-5yryJKqudTt_roxfc6WGB5YnrUp0la1Ga6lNzU&_nc_ht=scontent.flwo3-1.fna&oh=21740a93001b7821c4b560998b3c56ed&oe=5E216312" alt='George Gasyuk'>
  					</div>
  				</div>
  				<div class="col-12 col-md-8 col-xl-9">
@@ -16,7 +16,7 @@
 					</div>
 					<div class="about-person__descr">
 						<p>
-							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want a blog, site for your company or even some <a title="What is SPA" target="_blank" href="https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58">SPA</a>, then you're in the right place. 
+							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want a blog, site for your company or even some Single Page Application, then you're in the right place. 
 						</p>
 					</div>
 					<g-button external='https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP' text='Download CV' />
@@ -42,8 +42,7 @@
 		&-person {
 			position: relative;
 			padding: 30px;
-			background-color: #070708;
-			-webkit-transition: all .3s ease-in-out;
+			background-color: $dark;
 			transition: all .3s ease-in-out;
 			border-radius: 10px;
 			margin-bottom: 65px;
@@ -119,8 +118,8 @@
 				    height: 45px;
 				    align-items: center;
 				    justify-content: center;
-				    color: #fff;
-					background: #0e0f10;
+				    color: $white;
+					background: $light-dark;
 					font-size: 20px;
 					-webkit-border-radius: 100%;
 					border-radius: 100%;

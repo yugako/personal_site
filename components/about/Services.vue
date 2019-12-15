@@ -60,14 +60,11 @@
 	.about {
 		&-services {
 			padding-top: 85px;
-			// padding-bottom: 105px;
 			@include md-size-max {
 			  	padding-top: 80px;
-			  	// padding-bottom: 60px;
 			}
 			@include sm-size-max {
 			  	padding-top: 80px;
-			  	// padding-bottom: 40px;
 			}
 			.col:last-child {
 				margin-left: 25%;
@@ -79,8 +76,7 @@
 				text-align: center;
 				position: relative;
 				padding: 30px;
-				background-color: #070708;
-				-webkit-transition: all .3s ease-in-out;
+				background-color: $dark;
 				transition: all .3s ease-in-out;
 				border-radius: 10px;
 				margin-bottom: 20px;
@@ -91,7 +87,7 @@
 					font-size: 25px;
 					line-height: 70px;
 					color: $white;
-					background-color: #0e0f10;
+					background-color: $light-dark;
 					-webkit-border-radius: 50%;
 					border-radius: 50%;
 					text-align: center;
@@ -105,10 +101,8 @@
 							height: 60px;
 							top: 5px;
 							left: calc(50% - 30px);
-							-webkit-border-radius: 100%;
 							border-radius: 100%;
 							border: 1px solid $accent;
-							-webkit-animation: zoomIn .3s ease;
 							animation: zoomIn .3s ease;
 						}
 					}

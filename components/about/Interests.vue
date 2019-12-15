@@ -53,7 +53,6 @@
 			position: relative;
 			padding: 30px;
 			background-color: $dark;
-			-webkit-transition: all .3s ease-in-out;
 			transition: all .3s ease-in-out;
 			border-radius: 10px;
 			margin-top: 80px;
@@ -66,7 +65,6 @@
 				position: relative;
 				background: $light-dark;
 				padding: 15px;
-				-webkit-transition: all .3s ease-in-out;
 				transition: all .3s ease-in-out;
 				display: flex;
 				align-items: center;
@@ -86,19 +84,17 @@
 				i {
 					position: relative;
 					width: 30px;
-					float: left;
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					color: $accent;
-					font-size: 20px;
+					font-size: 1.3rem;
 					margin-right: 30px;
 				}
 			}
 			&__desc {
-
 				h6 {
-					font-size: 15px;
+					font-size: 1rem;
 					font-weight: 100;
 					line-height: 15px;
 					color: $white;
