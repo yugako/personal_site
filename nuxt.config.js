@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - George Gasyuk',
+    titleTemplate: '%s - Yurii Hasiuk',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -57,12 +57,12 @@ module.exports = {
 },
   pwa: {
     manifest: {
-      name: 'G.G.L',
-      author: 'George Gasyuk',
+      name: 'Y.H.L',
+      author: 'Yurii Hasiuk',
     },
   },
   sitemap: {
-    hostname: 'https://gasyuk.netlify.com',
+    hostname: 'https://hasiuk.netlify.com',
     gzip: true,
     exclude: [
       '/admin/**'
