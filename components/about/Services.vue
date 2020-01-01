@@ -12,46 +12,13 @@
 	</div>
 </template>
 <script>
+	import {services} from '@/info/info.js';
+	
 	export default {
 		name: 'services',
 		data() {
 			return {
-				services: [
-					{
-						icon: 'fab fa-vuejs',
-						image: '',
-						title: 'Build Single-Page Application',
-						excerpt: 'You`ve saw many times these cool sites which don`t reload after going to another page? It`s a SPA? Do you want the same? Just write me.',
-						describe: 'You`ve saw many times these cool sites which don`t reload after going to another page? It`s a SPA? Do you want the same? Just write me.',
-					},
-					{
-						icon: 'fab fa-wordpress',
-						image: '',
-						title: 'WordPress Theme developing',
-						excerpt: 'You have a website, but you don`t imagine how change content? So, in this case, you need a content management system and I`ll help you with it',
-						describe: 'Writers and stars of Veep have res ponded incredulously to the news an Australian politician required stitches after knocking himself unconscious.',
-					},
-					{
-						icon: 'fas fa-object-ungroup',
-						title: 'Creating sites from exsisting design',
-						excerpt: 'Do you have a design and you don`t know how make it alive? I can help you with this problem.',
-						describe: 'Writers and stars of Veep have res ponded incredulously to the news an Australian politician required stitches after knocking himself unconscious.',
-					},
-					
-					{
-						icon: 'fas fa-cogs',
-						image: '',
-						title: 'Search Engine Optimization',
-						excerpt: 'Would you like to see your website on the first position in search results? You are in the right place :)',
-						describe: 'Writers and stars of Veep have res ponded incredulously to the news an Australian politician required stitches after knocking himself unconscious.',
-					},
-					{
-						icon: 'fas fa-medkit',
-						title: 'Quick Support',
-						excerpt: 'Do you have a design and you don`t know how make it alive? I can help you with this problem.',
-						description: 'Lorem Ipsum is simply dummy text of the Lorem has been the industry`s standard dummy text ever.',
-					},
-				]
+				services,
 			}
 		}
 	}

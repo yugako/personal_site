@@ -3,34 +3,43 @@
  		<div class="row align-items-center">
  				<div class="col-12 col-md-4 col-xl-3">
  					<div class="about-person__photo">
- 						<img class="img-fluid" src="https://scontent.flwo3-1.fna.fbcdn.net/v/t1.0-9/70062120_1080218812148837_2300144141662683136_n.jpg?_nc_cat=108&_nc_oc=AQmra2Tc2a1ySBn85D1c8Rlugyin-5yryJKqudTt_roxfc6WGB5YnrUp0la1Ga6lNzU&_nc_ht=scontent.flwo3-1.fna&oh=21740a93001b7821c4b560998b3c56ed&oe=5E216312" alt='George Gasyuk'>
+ 						<img class="img-fluid" :src="profileImageURL" :alt='name'>
  					</div>
  				</div>
  				<div class="col-12 col-md-8 col-xl-9">
  					<h4 class="about-person__name">
- 						George Gasyuk
+ 						{{name}}
  					</h4>
  					<div class="about-person__loc">
 						<i class="fas fa-map-marked-alt"></i> 
-						Lviv, Ukraine
+						{{location}}
 					</div>
 					<div class="about-person__descr">
 						<p>
-							Hello! I’m George Gasyuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want a blog, site for your company or even some Single Page Application, then you're in the right place. 
+							{{description}} 
 						</p>
 					</div>
-					<g-button external='https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP' text='Download CV' />
+					<g-button :external='cvURL' text='Download CV' />
  				</div>
  			</div>
  	</div>
 </template>
 <script>
+	import {personal, links} from '@/info/info.js';
 	import GButton from '@/components/elements/GButton';
 
+	const {name, location, description} = personal;
+	const {cvURL, profileImageURL} = links;
     export default {
         name: 'about',
         data() {
-        	return {}
+        	return {
+        		name,
+        		location,
+        		description,
+        		cvURL,
+        		profileImageURL 
+        	}
         },
         components: {
           GButton

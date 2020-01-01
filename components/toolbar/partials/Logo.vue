@@ -2,6 +2,7 @@
 	<div class='site-logo'>
 		<nuxt-link exact to="/">
     		<img src="@/assets/img/logo.png">
+    		<span class="site-logo__text">Y.H.L</span>
     	</nuxt-link> 
 	</div>
 </template>
@@ -18,24 +19,21 @@
 <style lang='scss'>
 	.site-logo {
 		display: block;
+		text-align: center;
 		img {
-			max-width: 70px;
-			max-height: 70px;
+			max-width: 50px;
+			max-height: 50px;
+			display: block;
+			margin: auto;
 		}
 		
 		a {
-			color: $accent;
+			color: $white;
 			text-decoration: none;
-			&:first-letter {
-				color: $white;
-
-			}
-			&:hover {
-				color: $white;
-				&:first-letter {
-					color: $accent;
-				}
-			}
+		}
+		&__text {
+			font-family: $secondary-font;
+			font-weight: 600;
 		}
 		@media (max-height: 500px) {
 			margin-bottom: 30px;

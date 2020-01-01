@@ -1,9 +1,9 @@
 <template>
   <section class="home" v-if='!Expanded'>
     <div class="home-content">
-      <h1 class="home-content__title glitch" data-text='George Gasyuk'>George Gasyuk</h1>
+      <h1 class="home-content__title glitch" :data-text='name'>{{name}}</h1>
       
-      <vue-typed-js :typeSpeed="100" :cursorChar="'_'" :showCursor="true" :strings="['Frontend', 'WordPress', 'Frontend & Wordpress Developer']">
+      <vue-typed-js :typeSpeed="100" :cursorChar="'_'" :showCursor="true" :strings="skills">
         <p class="home-content__subtitle"><span class="typing"></span></p>
       </vue-typed-js>
       <div class="home-content__buttons">
@@ -17,9 +17,12 @@
 </template>
 
 <script>
-import GButton from '@/components/elements/GButton.vue';
-import Socials from '@/components/elements/Socials.vue';
-export default {
+  import {personal} from '@/info/info.js';
+  import GButton from '@/components/elements/GButton.vue';
+  import Socials from '@/components/elements/Socials.vue';
+
+  const {name, skills} = personal;
+  export default {
     name: '',
     head() {
       return {
@@ -35,7 +38,7 @@ export default {
     },
     data() {
       return {
-        
+        name, skills
       }
     },
     components: {

@@ -13,7 +13,7 @@
         </div>
         
         <div class="blog-single__content" v-html="$md.render(article.body)"></div>
-        <!-- <vue-disqus shortname="personal-12" :identifier="article.id" :url="this.id"></vue-disqus> -->
+        <vue-disqus shortname="personal-12" :identifier="article.id" :url="this.id"></vue-disqus>
        
       </div>
     </article>

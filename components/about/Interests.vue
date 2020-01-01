@@ -13,36 +13,12 @@
  	</div>
 </template>
 <script>
+	import {interests} from '@/info/info.js';
 	export default {
 		name: 'interests',
 		data() {
 			return {
-				interests: [
-					{
-						icon: 'fas fa-music',
-						title: 'Music'
-					},
-					{
-						icon: 'fas fa-route',
-						title: 'Travelling'
-					},
-					{
-						icon: 'fas fa-film',
-						title: 'Movies'
-					},
-					{
-						icon: 'fas fa-table-tennis',
-						title: 'Table tennis'
-					},
-					{
-						icon: 'fas fa-book',
-						title: 'Books'
-					},
-					{
-						icon: 'fas fa-gamepad',
-						title: 'Video games'
-					},
-				]
+				interests
 			}
 		}
 	}
