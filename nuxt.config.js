@@ -8,7 +8,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'If you want blog, site for your company or even some, then you`re in the right place. ' },
-      { hid: 'keywords', name: 'keywords', content: 'Юрій Колцьо, сайти, spa, pwa, js, html, css, wordpress, создание сайтов, Юрій Гасюк, web development' },
+      { hid: 'keywords', name: 'keywords', content: 'Юрій Гасюк, сайти, spa, pwa, js, html, css, wordpress, создание сайтов, web development' },
       { hid: 'robots', name: 'robots', content: 'index,follow,noodp' },
       { hid: 'googlebot', name: 'googlebot', content: 'index,follow' },
     ],

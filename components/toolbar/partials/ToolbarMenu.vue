@@ -6,9 +6,6 @@
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/about">
     		<i class="fas fa-user-tie"></i>
     	</nuxt-link>
-    	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/blog">
-    		<i class="fas fa-receipt"></i>
-    	</nuxt-link>
     	<nuxt-link class="toolbar-menu__link" active-class='link-active' to="/portfolio">
     		<i class="fas fa-briefcase"></i>
     	</nuxt-link>

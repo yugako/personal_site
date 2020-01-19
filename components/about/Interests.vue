@@ -4,10 +4,10 @@
 			<div class="col-12 col-sm-6 col-lg-4" v-for='interest in interests' :key='interest.title'>
 				<div class="about-interests__item">
 					<i :class="interest.icon"></i>
+				</div>
         	 	<div class="about-interests__desc">
 					<h6>{{interest.title}}</h6>
    	        	</div>
-				</div>
 			</div>
 		</div>
  	</div>

@@ -30,7 +30,7 @@
       };
     },
     head: {
-      title: 'Home 🚀',
+      title: 'Home',
       meta: [
         { hid: 'description', name: 'description', content: 'If you want blog, site for your company or even some, then you`re in the right place. Also here you will find a blog about web development and more' },
         {hid: 'twitter:image', name: 'twitter:image', content: "https://scontent.flwo3-1.fna.fbcdn.net/v/t1.0-9/70062120_1080218812148837_2300144141662683136_n.jpg?_nc_cat=108&_nc_oc=AQmra2Tc2a1ySBn85D1c8Rlugyin-5yryJKqudTt_roxfc6WGB5YnrUp0la1Ga6lNzU&_nc_ht=scontent.flwo3-1.fna&oh=21740a93001b7821c4b560998b3c56ed&oe=5E216312"}

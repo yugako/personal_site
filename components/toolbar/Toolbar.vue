@@ -2,7 +2,7 @@
 	<transition name='slide-fade'>	
 		<section class="toolbar">
 			<Logo />
-			<toolbar-menu />
+			<ToolbarMenu />
 			<Copyright />
 		</section>
 	</transition>
