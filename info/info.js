@@ -1,13 +1,13 @@
 export const personal = {
-	name: 'Yurii Hasiuk',
+	name: 'George Hasiuk',
 	location: 'Lviv, Ukraine',
-	description: `Hello! I’m Yurii Hasiuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want a blog, site for your company or even some Single Page Application, then you're in the right place.`,
+	description: `Hello! I’m George Hasiuk a self-taught & hard-working Frontend & Wordpress Developer with over 2 years work experience. If you want a blog, site for your company or even some Single Page Application, then you're in the right place.`,
 	skills: ['Frontend', 'WordPress', 'Frontend & Wordpress Developer']
 };
 
 export const links = {
 	cvURL: 'https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP',
-	profileImageURL: 'https://scontent.flwo3-1.fna.fbcdn.net/v/t1.0-9/70062120_1080218812148837_2300144141662683136_n.jpg?_nc_cat=108&_nc_oc=AQmra2Tc2a1ySBn85D1c8Rlugyin-5yryJKqudTt_roxfc6WGB5YnrUp0la1Ga6lNzU&_nc_ht=scontent.flwo3-1.fna&oh=21740a93001b7821c4b560998b3c56ed&oe=5E216312',
+	profileImageURL: '/img/me.jpg',
 };
 
 export const interests = [
@@ -77,11 +77,11 @@ export const services = [
 export const socials = [
 	{
 		icon: 'fab fa-facebook',
-		link: 'https://www.facebook.com/yurii.hasiuk'
+		link: 'https://www.facebook.com/George.hasiuk'
 	},
 	{
 		icon: 'fab fa-linkedin',
-		link: 'https://www.linkedin.com/in/yurii-hasiuk/'
+		link: 'https://www.linkedin.com/in/George-hasiuk/'
 	},
 	{
 		icon: 'fab fa-github-alt',
@@ -93,6 +93,6 @@ export const socials = [
 	},
 	{
 		icon: 'fas fa-envelope',
-		link: 'mailto:yurii.koltso@gmail.com'
+		link: 'mailto:George.koltso@gmail.com'
 	},
 ];

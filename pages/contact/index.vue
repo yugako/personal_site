@@ -18,6 +18,8 @@
             	<div id="loader" v-if='loader'>
                     <i class="fas fa-sync"></i>
                 </div>
+
+    
                 <button type="submit" class="g-button">Send Message</button>
                 
             </div>
@@ -89,11 +91,10 @@
 	        		this.form.email = '';
 	        		this.form.note = '';
 	        	}, 5000);
-	        	
-
 	        })
 	        .catch(error => {
-	        	this.fail = true;
+            this.fail = true;
+            setTimeout(() => this.fail = false, 5000)
 	        });
 	      
 	    },

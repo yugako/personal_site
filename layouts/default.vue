@@ -113,7 +113,7 @@
     display: flex;
     width: 100%;
     overflow-y: auto;
-    background-image: url('../assets/img/coffee_bg.jpg'), url('../assets/img/coffee_bg.webp');
+    background-image: url('../assets/img/coffee_bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

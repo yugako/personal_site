@@ -32,7 +32,7 @@
         head: {
 	      title: 'About',
 	      meta: [
-	        { hid: 'description', name: 'description', content: 'Want to know more about me? Then, please, follow this link :)' }
+	        { hid: 'description', name: 'description', content: 'Want to know more about me? Then go ahead' }
 	      ],
 	    },
     }

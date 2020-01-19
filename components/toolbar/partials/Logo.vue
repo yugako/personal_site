@@ -2,7 +2,7 @@
 	<div class='site-logo'>
 		<nuxt-link exact to="/">
     		<img src="@/assets/img/logo.png">
-    		<span class="site-logo__text">Y.H.L</span>
+    		<span class="site-logo__text">G.H.L</span>
     	</nuxt-link> 
 	</div>
 </template>

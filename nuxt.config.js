@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - Yurii Hasiuk',
+    titleTemplate: '%s - George Hasiuk',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -31,7 +31,8 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/google-analytics',
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+  
   ],
   markdownit: {
     injected: true,
@@ -58,7 +59,7 @@ module.exports = {
   pwa: {
     manifest: {
       name: 'Y.H.L',
-      author: 'Yurii Hasiuk',
+      author: 'George Hasiuk',
     },
   },
   sitemap: {

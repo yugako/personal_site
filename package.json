@@ -1,8 +1,8 @@
 {
-  "name": "GG",
+  "name": "ghl",
   "version": "1.0.0",
   "description": "Personal website builded by nuxt",
-  "author": "G.G",
+  "author": "G.H.L",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -22,6 +22,7 @@
     "nuxt": "^2.10.0",
     "vue-disqus": "^3.0.5",
     "vue-page-transition": "^0.2.2",
+    "vue-recaptcha": "^1.3.0",
     "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
