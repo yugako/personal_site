@@ -77,11 +77,11 @@ export const services = [
 export const socials = [
 	{
 		icon: 'fab fa-facebook',
-		link: 'https://www.facebook.com/George.hasiuk'
+		link: 'https://www.facebook.com/yurko.hasiuk'
 	},
 	{
 		icon: 'fab fa-linkedin',
-		link: 'https://www.linkedin.com/in/George-hasiuk/'
+		link: 'https://www.linkedin.com/in/yurii-hasiuk/'
 	},
 	{
 		icon: 'fab fa-github-alt',
@@ -93,6 +93,6 @@ export const socials = [
 	},
 	{
 		icon: 'fas fa-envelope',
-		link: 'mailto:George.koltso@gmail.com'
+		link: 'mailto:yurii.koltso@gmail.com'
 	},
 ];
