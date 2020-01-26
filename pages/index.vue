@@ -54,7 +54,6 @@
 
 <style lang='scss'>
   .home {
-    // display: flex;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -77,7 +76,7 @@
         font-size: 4rem;
       }
       @include xs-size-max {
-        font-size: 2.9rem;
+        font-size: 2.75rem;
       }
       
     }
@@ -166,7 +165,7 @@
     &::after {
       @include glitchCopy;
       left: -2px;
-      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+      text-shadow: -2px 0 #00fff9, 2px 2px #faebf6;
       animation: glitch-anim2 1s infinite linear alternate-reverse;
     }
   }
