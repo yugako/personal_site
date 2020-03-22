@@ -1,8 +1,0 @@
-{
-  "title": "Tic Tac Toe",
-  "thumbnail": "/img/tic-tac.png",
-  "demo": "#",
-  "source": "https://github.com/yugako/tic-tac-toe",
-  "category": "personal",
-  "body": "That app is a desktop version of classic Tic-Tac-Toe game. Applicatiob was developed using modern frontend frameworks such as Vue and Electron. After building you can install app like a simple app on Windows, Linux and MacOS.\n\n**Deadline:** december 2018"
-}
