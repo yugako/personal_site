@@ -1,8 +1,0 @@
-{
-  "title": "POMODORO-APP",
-  "thumbnail": "/img/pomodoro.jpg",
-  "demo": "https://clock-pomodoro.netlify.com/",
-  "source": "https://github.com/yugako/pomodoro-clock",
-  "category": "personal",
-  "body": "Manage your time with Pomodoro.\n\nSource code: <https://github.com/yugako/pomodoro-clock>"
-}
