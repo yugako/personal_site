@@ -1,8 +1,0 @@
-{
-  "title": "Restaurant management system",
-  "thumbnail": "/img/restaurant.png",
-  "demo": "https://github.com/yugako/global_frontend",
-  "source": "https://github.com/yugako/global_backend",
-  "category": "personal",
-  "body": "Project was created as part of JS GlobalLogic BaseCamp. For client-side I used VueJS, for server-side - NodeJS, Express, MongoDB.\n\nApp functionality:\n\n* viewing and ordering dishes, with a simulated payment system\n* page for the staff where there is a possibility of anchoring the employee per dish, change of status, filtering dishes by criteria (date and status)\n* admin's page. Editing dishes and staff list.\n\nData has been stored in MongoDB. Also you can run project with Docker.\n\n**Deadline**: 5.02.19 - 11.03.19"
-}
