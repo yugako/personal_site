@@ -99,17 +99,17 @@ module.exports = {
   /*
   ** Generate configuration
   */
-  generate: {
-    routes: function() {
-      const fs = require('fs');
-      return fs.readdirSync('./assets/content/blog').map(file => {
-        return {
-          route: `/blog/${file.slice(0, -5)}`, // Remove the .json from the end of the filename
-          payload: require(`./assets/content/blog/${file}`),
-        };
-      });
-    },
-  },
+  // generate: {
+  //   routes: function() {
+  //     const fs = require('fs');
+  //     return fs.readdirSync('./assets/content/blog').map(file => {
+  //       return {
+  //         route: `/blog/${file.slice(0, -5)}`, // Remove the .json from the end of the filename
+  //         payload: require(`./assets/content/blog/${file}`),
+  //       };
+  //     });
+  //   },
+  // },
   
   /*
   ** Build configuration
