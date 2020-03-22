@@ -35,24 +35,30 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit({ commit }) {
     /* Get Posts */
-    let postFiles = await require.context('~/assets/content/blog/', false, /\.json$/);
+    try {
 
-    let blogPosts = postFiles.keys().map(key => {
-    let resPost = postFiles(key);
-    resPost.slug = key.slice(2, -5);
-      return resPost;
-    });
-    await commit('setBlogPosts', blogPosts);
+      // let postFiles = await require.context('~/assets/content/blog/', false, /\.json$/);
+      
+      // let blogPosts = postFiles.keys().map(key => {
+      // let resPost = postFiles(key);
+      // resPost.slug = key.slice(2, -5);
+      //   return resPost;
+      // });
+      // await commit('setBlogPosts', blogPosts);
+      
+      /* Get works */
+      let workFiles = await require.context('~/assets/content/portfolio/', false, /\.json$/);
+
+      let works = workFiles.keys().map(key => {
+      let resWorks = workFiles(key);
+      resWorks.slug = key.slice(2, -5);
+        return resWorks;
+      });
+      await commit('setWorks', works);
+    } catch (e) {
+      console.log(e);
+    }
     
-    /* Get works */
-    let workFiles = await require.context('~/assets/content/portfolio/', false, /\.json$/);
-
-    let works = workFiles.keys().map(key => {
-    let resWorks = workFiles(key);
-    resWorks.slug = key.slice(2, -5);
-      return resWorks;
-    });
-    await commit('setWorks', works);
   },
 }
 
