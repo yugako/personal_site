@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "hasiuk_app",
+    siteUrl: `https://hasiuk.netlify.app`,
   },
   plugins: [
     "gatsby-plugin-netlify-cms",

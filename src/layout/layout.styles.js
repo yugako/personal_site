@@ -5,10 +5,15 @@ export const LayoutStyles = createGlobalStyle`
   
   :root {
     --dark: #000000;
+    --light: #ffffff;
     --primary: #1b9cfc;
     --gray: #aaaaaa;
     --primary-font: 'Roboto Mono', monospace;
     --secondary-font: 'Mulish', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
   
   body {
@@ -31,9 +36,8 @@ function randomHeight() {
     for (let i = 0; i < 20; i += 1) {
         const random = Math.floor(Math.random()*400 + 200);
         styles += `
-          div:nth-child(${i}) {
+          & > div:nth-child(${i}) {
             height: ${random}px;
-            line-height: ${random}px;
           }
      `
     }
@@ -72,7 +76,7 @@ export const Flex = styled.div`
 export const Masonry = styled.div`
   columns: 3 200px;
   column-gap: 1rem;
-  div {
+  & > div {
     color: white;
     width: 100%;
     margin: 0 1rem 1rem 0;
@@ -83,4 +87,11 @@ export const Masonry = styled.div`
   }
 
   ${randomHeight()};
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  align-items: ${({vertical}) => vertical || 'initial'};
+  grid-template-columns: 1fr 1fr;
+  gap: ${({gap}) => gap || 20}px;
 `;

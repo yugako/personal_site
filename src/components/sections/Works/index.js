@@ -1,6 +1,7 @@
 import React from "react";
-import {Container, Masonry} from "../../layout/layout.styles";
+import {Container, Masonry} from "../../../layout/layout.styles";
 import {WorksSection} from "./works.styles";
+import {WorkItem} from "./WorkItem";
 
 export const Works = () => {
     return (
@@ -8,11 +9,9 @@ export const Works = () => {
             <Container>
                 <Masonry>
                     {
-                        Array(15)
+                        Array(10)
                         .fill(1)
-                        .map((_item, index) => <div key={index}>
-                            <img src={`https://picsum.photos/id/${10 + index}/1920/1080`} alt={index}/>
-                        </div>)
+                        .map((_item, index) => <WorkItem key={index} id={index} />)
                     }
                 </Masonry>
             </Container>
