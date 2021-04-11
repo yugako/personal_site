@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const WorksSection = styled.section`
-  margin-top: 7rem;
-`;
-
 export const WorkItemOverlay = styled.div`
   position: absolute;
   width: 100%;

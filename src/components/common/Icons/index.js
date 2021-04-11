@@ -4,3 +4,5 @@ export { ILinkedin } from './Linkedin';
 export { IGithub } from './Github';
 export { ITelegram } from './Telegram';
 export { IInstagram } from './Instagram';
+export { IBriefcase } from './Briefcase';
+export { IReact } from './ReactIcon';

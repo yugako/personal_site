@@ -7,6 +7,6 @@ const LogoLink = (props) => <Link to="/" {...props}>{props.children}</Link>
 
 export const AppLogo = () => {
     return (
-        <Logo as={LogoLink}>Hasiuk <Dot/></Logo>
+        <Logo as={LogoLink}>Hasiuk<Dot/></Logo>
     )
 }

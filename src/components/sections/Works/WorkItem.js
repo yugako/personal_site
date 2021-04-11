@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import {WorkItemContent, WorkItemOverlay, WorkItemWrapper} from "./works.styles";
 import {Link} from "gatsby";
 
-export const WorkItem = ({id}) => {
+export const WorkItem = ({title, category, preview}) => {
     return (
         <WorkItemWrapper>
             <Link to={'/portfolio'}>
-                <img src={`https://picsum.photos/id/${10 + id}/1920/1080`} alt={id}/>
+                <img src={preview} alt={title}/>
                 <WorkItemOverlay>
                     <span className="wrap-icon icon-link2"/>
                     <WorkItemContent>
-                        <h3>Project Number {id}</h3>
-                        <p>web, branding</p>
+                        <h3>{title}</h3>
+                        <p>Industry: {category}</p>
                     </WorkItemContent>
                 </WorkItemOverlay>
             </Link>
@@ -22,5 +22,7 @@ export const WorkItem = ({id}) => {
 }
 
 WorkItem.propTypes = {
-    id: PropTypes.number
+    title: PropTypes.string,
+    preview: PropTypes.string,
+    category: PropTypes.string
 }

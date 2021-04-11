@@ -1,10 +1,10 @@
-import styled, {createGlobalStyle, css} from "styled-components";
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const LayoutStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&family=Roboto+Mono&display=swap');
   
   :root {
-    --dark: #000000;
+    --dark: #212529;
     --light: #ffffff;
     --primary: #1b9cfc;
     --gray: #aaaaaa;
@@ -24,6 +24,10 @@ export const LayoutStyles = createGlobalStyle`
     line-height: 1.5;
     font-size: 18px;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
   .t-primary {
     color: var(--primary);
@@ -31,18 +35,20 @@ export const LayoutStyles = createGlobalStyle`
 `;
 
 function randomHeight() {
-    let styles = '';
+  let styles = '';
 
-    for (let i = 0; i < 20; i += 1) {
-        const random = Math.floor(Math.random()*400 + 200);
-        styles += `
+  for (let i = 0; i < 20; i += 1) {
+    const random = Math.floor(Math.random() * 400 + 200);
+    styles += `
           & > div:nth-child(${i}) {
-            height: ${random}px;
+            @media (min-width: 1024px) {
+                height: ${random}px;
+            }
           }
-     `
-    }
+     `;
+  }
 
-    return css`${styles}`;
+  return css`${styles}`;
 }
 
 export const Container = styled.div`
@@ -69,13 +75,14 @@ export const Container = styled.div`
 
 export const Flex = styled.div`
   display: flex;
-  align-items: ${({vertical}) => vertical || 'center'};
-  justify-content: ${({horizontal}) => horizontal || 'flex-start'};
+  align-items: ${({ vertical }) => vertical || 'center'};
+  justify-content: ${({ horizontal }) => horizontal || 'flex-start'};
 `;
 
 export const Masonry = styled.div`
   columns: 3 200px;
   column-gap: 1rem;
+  ${randomHeight()};
   & > div {
     color: white;
     width: 100%;
@@ -84,14 +91,28 @@ export const Masonry = styled.div`
     text-align: center;
     font-weight: 900;
     font-size: 2rem;
+    @media (max-width: 768px) {
+      height: 300px;
+    }
   }
-
-  ${randomHeight()};
 `;
 
 export const Grid = styled.div`
   display: grid;
-  align-items: ${({vertical}) => vertical || 'initial'};
-  grid-template-columns: 1fr 1fr;
-  gap: ${({gap}) => gap || 20}px;
+  align-items: ${({ vertical }) => vertical || 'initial'};
+  grid-template-columns: ${({ columns }) => columns || '1fr 1fr'};
+  gap: ${({ gap }) => gap || 20}px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const SectionWrap = styled.section`
+  margin-top: 7.5rem;
+  @media (max-width: 1024px) {
+    margin-top: 5rem;
+  }
+  @media (max-width: 576px) {
+    margin-top: 2.5rem;
+  }
 `;

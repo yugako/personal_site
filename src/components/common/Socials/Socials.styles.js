@@ -9,6 +9,9 @@ export const SocialsWrapper = styled.div`
   justify-content: ${({horizontal}) => horizontal || 'flex-start'};
   a {
     margin: 0 7px;
+    @media (max-width: 415px) {
+      margin: 0 5px;
+    }
     &:first-child {
       margin-left: 0;
     }

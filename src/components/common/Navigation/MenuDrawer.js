@@ -1,32 +1,33 @@
 import React from "react";
 import {MenuDrawerWrap} from "./navigation.styles";
 import {Backdrop} from "./Backdrop";
+import {Socials} from "../Socials";
+import {AppLogo} from "../Logo";
 
 export const MenuDrawer = ({isActive, clickHandler}) => {
     return (
         <>
             <Backdrop isActive={isActive} clickHandler={clickHandler} />
             <MenuDrawerWrap isActive={isActive}>
+                <AppLogo />
                <ul>
-                   <li>
-                       <a href="#home">Home</a>
-                   </li>
                    <li>
                        <a href="#works">Works</a>
                    </li>
                    <li>
-                       Services
+                       <a href="#services">Services</a>
                    </li>
                    <li>
-                       About
+                       <a href="#about">About</a>
                    </li>
                    <li>
-                       Blog
+                       <a href="#blog">Blog</a>
                    </li>
                    <li>
-                       Contact
+                       <a href="#contact">Contact</a>
                    </li>
                </ul>
+                <Socials />
             </MenuDrawerWrap>
         </>
 

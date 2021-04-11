@@ -65,9 +65,13 @@ export const MenuDrawerWrap = styled.nav`
   top: 0;
   transition: left 0.5s;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media (max-width: 415px) {
     width: 280px;
+    padding: 15px;
   }
 
   @media (max-width: 320px) {
@@ -76,8 +80,21 @@ export const MenuDrawerWrap = styled.nav`
   
   ul {
     list-style: none;
+    padding-left: 0;
+    margin: 0;
     li {
-      
+      a {
+        padding: 5px 0px;
+        display: block;
+        position: relative;
+        color: var(--dark);
+        text-decoration: none;
+        transition: color 0.5s ease-in;
+        &:hover {
+          color: var(--primary);
+          transition: color 0.5s ease-in;
+        }
+      }
     }
   }
 `;
