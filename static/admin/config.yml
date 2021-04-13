@@ -3,7 +3,7 @@ backend:
   repo: yugako/personal_site
   branch: new
 
-media_folder: images/uploads
+media_folder: static/img
 public_folder: /img
 publish_mode: editorial_workflow
 
@@ -13,7 +13,6 @@ collections:
     folder: 'content/blog'
     create: true
     slug: '{{slug}}'
-    format: 'json'
     editor:
       preview: false
     fields:
@@ -27,7 +26,6 @@ collections:
     folder: 'content/portfolio'
     create: true
     slug: '{{slug}}'
-    format: 'json'
     editor:
       preview: false
     fields:
