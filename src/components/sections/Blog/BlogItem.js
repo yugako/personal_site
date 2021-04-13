@@ -1,19 +1,40 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import {BIDate, BIImage, BITitle, BIWrap} from "./blog.styles";
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import {
+  BIDate, BIImage, BITitle, BIWrap,
+} from './blog.styles';
 
-export const BlogItem = ({preview, title, date}) => {
-    return (
-        <BIWrap href="#">
-            <BIImage src={preview} />
-            <BITitle>{title}</BITitle>
-            <BIDate>{date}</BIDate>
-        </BIWrap>
-    )
-}
+const BlogDetailsLink = ({ slug, children, ...props }) => (
+  <Link
+    to={slug}
+    {...props}
+  >
+    {children}
+  </Link>
+);
+
+export const BlogItem = ({
+  preview, title, date, slug,
+}) => (
+  <BIWrap as={BlogDetailsLink} slug={slug}>
+    <Img fluid={preview} />
+    <BITitle>{title}</BITitle>
+    <BIDate>{date}</BIDate>
+  </BIWrap>
+);
+
+BlogItem.defaultProps = {
+  preview: '',
+  title: '',
+  date: '',
+  slug: '',
+};
 
 BlogItem.propTypes = {
-    preview: PropTypes.string,
-    title: PropTypes.string,
-    date: PropTypes.string
-}
+  preview: PropTypes.string,
+  title: PropTypes.string,
+  date: PropTypes.string,
+  slug: PropTypes.string,
+};
