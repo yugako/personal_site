@@ -18,7 +18,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode });
-    console.log(value);
     createNodeField({
       name: 'slug',
       node,
@@ -65,7 +64,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `portfolio${node.fields.slug}`,
         component: portfolioTemplate,
         context: {
-        // additional data can be passed via context
           slug: node.fields.slug,
         },
       });
@@ -74,7 +72,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `blog${node.fields.slug}`,
         component: blogPostTemplate,
         context: {
-          // additional data can be passed via context
           slug: node.fields.slug,
         },
       });

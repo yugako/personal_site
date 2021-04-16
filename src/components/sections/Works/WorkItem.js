@@ -7,7 +7,7 @@ export const WorkItem = ({
   title, category, preview, slug,
 }) => (
   <WorkItemWrapper>
-    <Link to={slug}>
+    <Link to={`/portfolio${slug}`}>
       <img src={preview} alt={title} />
       <WorkItemOverlay>
         <span className="wrap-icon icon-link2" />

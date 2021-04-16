@@ -19,8 +19,8 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Content', name: 'content', widget: 'markdown' }
   - name: 'portfolio'
     label: 'Portfolio'
     folder: 'content/portfolio'
@@ -30,8 +30,9 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false}
-      - { label: 'Demo link', name: 'demo', widget: 'string' }
+      - { label: 'Client', name: 'client', widget: 'string' }
+      - { label: 'Deliverables', name: 'duration', widget: 'string' }
+      - { label: "Project preview", name: "thumbnail", widget: "image"}
+      - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Source link', name: 'source', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }

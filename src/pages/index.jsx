@@ -45,11 +45,19 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
+          excerpt
           thumbnail 
+          content
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          client
+          thumbnail 
+          duration
+          role
           source
-          category
-          demo
+          description
         }
       }
     }

@@ -17,54 +17,46 @@ import { Layout } from '../layout';
 const BackLink = (props) => <Link to="/" {...props}>Go Back</Link>;
 
 export default function Template({ data }) {
+  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
       <WDWrap>
         <Container>
           <Flex horizontal="space-between">
-            <WDTitle>AmeriFreight</WDTitle>
+            <WDTitle>{frontmatter.title}</WDTitle>
             <ButtonWrap as={BackLink} />
           </Flex>
           <Grid gap={50} vertical="stretch">
             <WDImg
-              src="https://www.amerifreight.net/wp-content/uploads/2019/11/auto-transport-auto-transport-company.png"
-              alt="AmeriFreight"
+              src={frontmatter.thumbnail}
+              alt={frontmatter.title}
             />
             <WDContent>
               <Grid style={{ marginBottom: 50 }}>
                 <WDMeta>
-                  <WDLabel>Project Date</WDLabel>
-                  <WDValue>March 9th, 2020</WDValue>
+                  <WDLabel>Deliverables</WDLabel>
+                  <WDValue>{frontmatter.duration}</WDValue>
                 </WDMeta>
                 <WDMeta>
                   <WDLabel>Role</WDLabel>
-                  <WDValue>Frontend Developer</WDValue>
+                  <WDValue>{frontmatter.role}</WDValue>
                 </WDMeta>
                 <WDMeta>
                   <WDLabel>Client</WDLabel>
-                  <WDValue>AmeriFreight</WDValue>
+                  <WDValue>{frontmatter.client}</WDValue>
                 </WDMeta>
                 <WDMeta>
                   <WDLabel>Visit</WDLabel>
                   <WDValue>
-                    <a href="https://amerifreight.net" target="_blank" rel="nofollow noreferrer">https://amerifreight.net</a>
+                    <a href={frontmatter.source} target="_blank" rel="nofollow noreferrer">{frontmatter.source}</a>
                   </WDValue>
                 </WDMeta>
               </Grid>
-              <WDDescription>
-                Excellent work has been done on developing the site for AmeriFreight,
-                a reliable auto transport company in Georgia, USA.
-                AmeriFreight is an auto transport broker that works
-                with a network of reliable carriers to help consumers transport
-                their cars and other vehicles across the lower 48 states,
-                Canada and a few other select locations.
-              </WDDescription>
-              <WDDescription>
-                The company can ship motorcycles,
-                automobiles, trailers, RVs, boats, classic cars and trucks.
-                You can use AmeriFreight’s rate calculator on the website to get
-                a better idea of how much it will cost to ship your vehicle.
-              </WDDescription>
+              <div
+                className="blog-post-content"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
             </WDContent>
           </Grid>
         </Container>
@@ -83,6 +75,12 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        client
+        duration
+        thumbnail
+        role
+        source
+        description
       }
     }
   }
