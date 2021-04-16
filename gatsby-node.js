@@ -56,25 +56,80 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const collectionType = node.fileAbsolutePath.split('/').reverse()[1];
+  const { edges } = result.data.allMarkdownRemark;
 
-    if (collectionType === 'portfolio') {
-      createPage({
-        path: `portfolio${node.fields.slug}`,
-        component: portfolioTemplate,
-        context: {
-          slug: node.fields.slug,
-        },
-      });
-    } else {
-      createPage({
-        path: `blog${node.fields.slug}`,
-        component: blogPostTemplate,
-        context: {
-          slug: node.fields.slug,
-        },
-      });
+  if (edges) {
+    edges.forEach(({ node }) => {
+      const collectionType = node.fileAbsolutePath.split('/').reverse()[1];
+
+      if (collectionType && collectionType === 'portfolio') {
+        createPage({
+          path: `portfolio${node.fields.slug}`,
+          component: portfolioTemplate,
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+      }
+      if (collectionType && collectionType === 'blog') {
+        createPage({
+          path: `blog${node.fields.slug}`,
+          component: blogPostTemplate,
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+      }
+    });
+  }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  // Explicitly define the siteMetadata {} object
+  // This way those will always be defined even if removed from gatsby-config.js
+
+  // Also explicitly define the Markdown frontmatter
+  // This way the "MarkdownRemark" queries will return `null` even when no
+  // blog posts are stored inside "content/blog" instead of returning an error
+  createTypes(`
+    type SiteSiteMetadata {
+      author: Author
+      siteUrl: String
+      social: Social
     }
-  });
+
+    type Author {
+      name: String
+      summary: String
+    }
+
+    type Social {
+      twitter: String
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+      fields: Fields
+      fileAbsolutePath: String
+    }
+
+    type Frontmatter {
+      title: String
+      thumbnail: String
+      description: String
+      date: Date @dateformat
+      source: String
+      excerpt: String
+      content: String
+      client: String
+      duration: String
+      role: String
+    }
+
+    type Fields {
+      slug: String
+    }
+  `);
 };
