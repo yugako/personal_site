@@ -17,10 +17,10 @@ const IndexPage = ({ data, location }) => {
     <Layout>
       <Header />
       <Banner />
-      <Works />
+      <Works works={allMarkdownRemark.nodes.filter((item) => item.fileAbsolutePath.split('/').reverse()[1] === 'portfolio')} />
       <Services />
       <About />
-      <Blog articles={allMarkdownRemark.nodes.filter(item => item.frontmatter.posttype === 'article')} />
+      <Blog articles={allMarkdownRemark.nodes.filter((item) => item.fileAbsolutePath.split('/').reverse()[1] === 'blog')} />
       <Footer />
     </Layout>
   );
@@ -38,20 +38,18 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         html
-        
+        fileAbsolutePath
+         fields {
+            slug
+         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          slug
-          posttype
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
+          thumbnail 
+          source
+          category
+          demo
         }
       }
     }

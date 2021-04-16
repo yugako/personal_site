@@ -11,6 +11,22 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
+const { createFilePath } = require('gatsby-source-filesystem');
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const value = createFilePath({ node, getNode });
+    console.log(value);
+    createNodeField({
+      name: 'slug',
+      node,
+      value,
+    });
+  }
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
@@ -25,9 +41,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ) {
         edges {
           node {
-            frontmatter {
+            fileAbsolutePath
+            fields {
               slug
-              posttype
             }
           }
         }
@@ -42,22 +58,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (node.frontmatter.posttype === 'portfolio') {
+    const collectionType = node.fileAbsolutePath.split('/').reverse()[1];
+
+    if (collectionType === 'portfolio') {
       createPage({
-        path: node.frontmatter.slug,
+        path: `portfolio${node.fields.slug}`,
         component: portfolioTemplate,
         context: {
-          // additional data can be passed via context
-          slug: node.frontmatter.slug,
+        // additional data can be passed via context
+          slug: node.fields.slug,
         },
       });
     } else {
       createPage({
-        path: node.frontmatter.slug,
+        path: `blog${node.fields.slug}`,
         component: blogPostTemplate,
         context: {
           // additional data can be passed via context
-          slug: node.frontmatter.slug,
+          slug: node.fields.slug,
         },
       });
     }
