@@ -17,19 +17,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'blog',
-    //     path: `${__dirname}/content/blog` || `${__dirname}/content`,
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'portfolio',
-    //     path: `${__dirname}/content/portfolio` || `${__dirname}/content`,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/content`,
+      },
+    },
   ],
 };

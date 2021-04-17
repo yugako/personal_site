@@ -56,32 +56,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const { edges } = result.data.allMarkdownRemark;
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const collectionType = node.fileAbsolutePath.split('/').reverse()[1];
 
-  if (edges) {
-    edges.forEach(({ node }) => {
-      const collectionType = node.fileAbsolutePath.split('/').reverse()[1];
-
-      if (collectionType && collectionType === 'portfolio') {
-        createPage({
-          path: `portfolio${node.fields.slug}`,
-          component: portfolioTemplate,
-          context: {
-            slug: node.fields.slug,
-          },
-        });
-      }
-      if (collectionType && collectionType === 'blog') {
-        createPage({
-          path: `blog${node.fields.slug}`,
-          component: blogPostTemplate,
-          context: {
-            slug: node.fields.slug,
-          },
-        });
-      }
-    });
-  }
+    if (collectionType && collectionType === 'portfolio') {
+      createPage({
+        path: `portfolio${node.fields.slug}`,
+        component: portfolioTemplate,
+        context: {
+          slug: node.fields.slug,
+        },
+      });
+    }
+    if (collectionType && collectionType === 'blog') {
+      createPage({
+        path: `blog${node.fields.slug}`,
+        component: blogPostTemplate,
+        context: {
+          slug: node.fields.slug,
+        },
+      });
+    }
+  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
