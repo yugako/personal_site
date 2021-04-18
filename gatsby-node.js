@@ -29,7 +29,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
-  const blogPostTemplate = require.resolve('./src/templates/blogTemplate.js');
+  const blogPostTemplate = require.resolve('./src/templates/blogTemplate.jsx');
   const portfolioTemplate = require.resolve('./src/templates/portfolioTemplate.jsx');
 
   const result = await graphql(`
@@ -61,10 +61,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     if (collectionType && collectionType === 'portfolio') {
       createPage({
-        path: `portfolio${node.fields.slug}`,
+        path: `${node.fields.slug}`,
         component: portfolioTemplate,
         context: {
-          slug: node.fields.slug,
+          slug: `${node.fields.slug}`,
         },
       });
     }
@@ -73,7 +73,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `blog${node.fields.slug}`,
         component: blogPostTemplate,
         context: {
-          slug: node.fields.slug,
+          slug: `blog${node.fields.slug}`,
         },
       });
     }

@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { WorkItemContent, WorkItemOverlay, WorkItemWrapper } from './works.styles';
 
 export const WorkItem = ({
-  title, category, preview, slug,
+  title, duration, preview, slug,
 }) => {
   const [viewRef, inView] = useInView({
     threshold: 0,
@@ -15,13 +15,17 @@ export const WorkItem = ({
   return (
     <WorkItemWrapper ref={viewRef}>
       {inView && (
-      <Link to={`/portfolio${slug}`}>
+      <Link to={`${slug}`}>
         <img src={preview} alt={title} />
         <WorkItemOverlay>
           <span className="wrap-icon icon-link2" />
           <WorkItemContent>
             <h3>{title}</h3>
-            {/* <p>Industry: {category}</p> */}
+            <p>
+              Deliverables:
+              {' '}
+              {duration}
+            </p>
           </WorkItemContent>
         </WorkItemOverlay>
       </Link>
@@ -30,9 +34,16 @@ export const WorkItem = ({
   );
 };
 
+WorkItem.defaultProps = {
+  title: '',
+  slug: '',
+  preview: '',
+  duration: '',
+};
+
 WorkItem.propTypes = {
   title: PropTypes.string,
   slug: PropTypes.string,
   preview: PropTypes.string,
-  category: PropTypes.string,
+  duration: PropTypes.string,
 };

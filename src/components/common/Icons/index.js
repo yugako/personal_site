@@ -6,3 +6,7 @@ export { ITelegram } from './Telegram';
 export { IInstagram } from './Instagram';
 export { IBriefcase } from './Briefcase';
 export { IReact } from './ReactIcon';
+export { IWordpress } from './Wordpress';
+export { IMobile } from './Mobile';
+export { IPalette } from './Palette';
+export { ISEO } from './SEO';

@@ -24,7 +24,7 @@ export const WDContent = styled.div`
 
 export const WDMeta = styled.div``;
 
-export const WDDescription = styled.p`
+export const WDDescription = styled.div`
   margin-bottom: 20px;
   color: rgb(33, 37, 41);
 `;

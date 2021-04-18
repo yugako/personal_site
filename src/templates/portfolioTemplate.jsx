@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import {
   WDContent,
@@ -13,49 +14,50 @@ import { ButtonWrap } from '@components/common/Button/button.styles';
 import { Container, Flex, Grid } from '../layout/layout.styles';
 import { Layout } from '../layout';
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const BackLink = (props) => <Link to="/" {...props}>Go Back</Link>;
 
 export default function Template({ data }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter } = markdownRemark;
+  const {
+    title, thumbnail, duration, role, client, source, description,
+  } = frontmatter;
   return (
     <Layout>
       <WDWrap>
         <Container>
           <Flex horizontal="space-between">
-            <WDTitle>{frontmatter.title}</WDTitle>
+            <WDTitle>{title}</WDTitle>
             <ButtonWrap as={BackLink} />
           </Flex>
           <Grid gap={50} vertical="stretch">
             <WDImg
-              src={frontmatter.thumbnail}
-              alt={frontmatter.title}
+              src={thumbnail}
+              alt={title}
             />
             <WDContent>
               <Grid style={{ marginBottom: 50 }}>
                 <WDMeta>
                   <WDLabel>Deliverables</WDLabel>
-                  <WDValue>{frontmatter.duration}</WDValue>
+                  <WDValue>{duration}</WDValue>
                 </WDMeta>
                 <WDMeta>
                   <WDLabel>Role</WDLabel>
-                  <WDValue>{frontmatter.role}</WDValue>
+                  <WDValue>{role}</WDValue>
                 </WDMeta>
                 <WDMeta>
                   <WDLabel>Client</WDLabel>
-                  <WDValue>{frontmatter.client}</WDValue>
+                  <WDValue>{client}</WDValue>
                 </WDMeta>
                 <WDMeta>
                   <WDLabel>Visit</WDLabel>
                   <WDValue>
-                    <a href={frontmatter.source} target="_blank" rel="nofollow noreferrer">{frontmatter.source}</a>
+                    <a href={source} target="_blank" rel="nofollow noreferrer">{source}</a>
                   </WDValue>
                 </WDMeta>
               </Grid>
-              <div
-                className="blog-post-content"
-                dangerouslySetInnerHTML={{ __html: html }}
+              <WDDescription
+                dangerouslySetInnerHTML={{ __html: description }}
               />
             </WDContent>
           </Grid>
@@ -65,10 +67,17 @@ export default function Template({ data }) {
   );
 }
 
+Template.defaultProps = {
+  data: {},
+};
+
+Template.propTypes = {
+  data: PropTypes.any,
+};
+
 export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
       fields {
         slug
       }

@@ -1,8 +1,6 @@
-import * as React from "react"
-import { IEnvelope, ILinkedin, IGithub, ITelegram, IFacebook, IInstagram } from "../Icons"
-import { SocialsWrapper } from "./Socials.styles"
+import {IEnvelope, IFacebook, IGithub, IInstagram, ILinkedin, ITelegram} from "../components/common/Icons";
 
-const links = [
+export const socialLinks = [
     {
         to: "mailto:hasiuk.george@gmail.com",
         icon: IEnvelope
@@ -23,14 +21,4 @@ const links = [
         to: "https://www.instagram.com/yurko_hasiuk/",
         icon: IInstagram
     }
-]
-
-export const Socials = ({ horizontal }) => (
-    <SocialsWrapper horizontal={horizontal}>
-        {links.map(link => (
-            <a target={"_blank"} key={link.to} href={link.to} rel="noreferrer">
-                <link.icon color="var(--light)" />
-            </a>
-        ))}
-    </SocialsWrapper>
-)
+];

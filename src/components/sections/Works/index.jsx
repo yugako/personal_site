@@ -4,26 +4,6 @@ import { WorkItem } from './WorkItem';
 
 // const worksData = [
 //     {
-//         preview: '/images/works/amerifreight.jpg',
-//         title: 'AmeriFreight',
-//         category: 'Corporate'
-//     },
-//     {
-//         preview: '/images/works/saa.jpg',
-//         title: 'SAA',
-//         category: 'Non-profit'
-//     },
-//     {
-//         preview: '/images/works/dtr.jpg',
-//         title: 'DTR Modern',
-//         category: 'Art'
-//     },
-//     {
-//         preview: '/images/works/nmr.jpg',
-//         title: 'NMR Distribution',
-//         category: 'WholeSale'
-//     },
-//     {
 //         preview: '/images/works/rhode.jpg',
 //         title: 'RhodesideRevival',
 //         category: 'Services'
@@ -69,6 +49,7 @@ export const Works = ({ works }) => (
             key={work.frontmatter.title}
             title={work.frontmatter.title}
             preview={work.frontmatter.thumbnail}
+            duration={work.frontmatter.duration}
             slug={work.fields.slug}
           />
         ))}

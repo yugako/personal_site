@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HamburgerWrapper = styled.div`
-  z-index:  ${({isActive}) => isActive ? 12 : 1};
+  z-index:  ${({ isActive }) => (isActive ? 12 : 1)};
   
   .ham {
     cursor: pointer;
@@ -33,7 +33,7 @@ export const HamburgerWrapper = styled.div`
     .line {
       fill:none;
       transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, stroke 400ms;
-      stroke: ${({isActive}) => isActive ? 'var(--light)': 'var(--dark)'};
+      stroke: ${({ isActive }) => (isActive ? 'var(--light)' : 'var(--dark)')};
       stroke-width:5.5;
       stroke-linecap:round;
       transition-delay: 0.7s;
@@ -61,7 +61,7 @@ export const MenuDrawerWrap = styled.nav`
   background-color: var(--light);
   z-index: 12;
   height: 100%;
-  left: ${({isActive}) => isActive ? 0 : '-100%'};
+  left: ${({ isActive }) => (isActive ? 0 : '-100%')};
   top: 0;
   transition: left 0.5s;
   box-sizing: border-box;
@@ -77,25 +77,25 @@ export const MenuDrawerWrap = styled.nav`
   @media (max-width: 320px) {
     width: 240px;
   }
-  
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    li {
-      a {
-        padding: 5px 0px;
-        display: block;
-        position: relative;
-        color: var(--dark);
-        text-decoration: none;
-        transition: color 0.5s ease-in;
-        &:hover {
-          color: var(--primary);
-          transition: color 0.5s ease-in;
-        }
-      }
-    }
+`;
+
+export const MenuList = styled.ul`
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+`;
+
+export const MenuItem = styled.li``;
+export const MenuLink = styled.a`
+  padding: 5px 0px;
+  display: block;
+  position: relative;
+  color: var(--dark);
+  text-decoration: none;
+  transition: color 0.5s ease-in;
+  &:hover {
+    color: var(--primary);
+    transition: color 0.5s ease-in;
   }
 `;
 
@@ -106,7 +106,7 @@ export const BackdropWrap = styled.div`
   background-color: var(--dark);
   opacity: .6;
   top: 0;
-  left: ${({isActive}) => isActive ? 0 : '150%'};
+  left: ${({ isActive }) => (isActive ? 0 : '150%')};
   transition: left 0.5s ease-out;
   transition-delay: 0.5s;
 `;

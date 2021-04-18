@@ -9,7 +9,7 @@ export const Blog = ({ articles }) => (
     <Container>
       <SectionHeading title="Blog" subtitle="News & Updates" align="center" />
       <Grid columns="1fr 1fr 1fr 1fr" style={{ marginTop: '1.5rem' }}>
-        {articles.map((article) => (
+        {articles.length ? articles.map((article) => (
           <BlogItem
             key={article.frontmatter.title}
             preview={article.frontmatter.thumbnail}
@@ -17,7 +17,7 @@ export const Blog = ({ articles }) => (
             date={article.frontmatter.date}
             slug={article.fields.slug}
           />
-        ))}
+        )) : 'No articles to show'}
       </Grid>
     </Container>
   </SectionWrap>
