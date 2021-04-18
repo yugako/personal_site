@@ -14,13 +14,14 @@ import { ButtonWrap } from '@components/common/Button/button.styles';
 import { Container, Flex, Grid } from '../layout/layout.styles';
 import { Layout } from '../layout';
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const BackLink = (props) => <Link to="/" {...props}>Go Back</Link>;
 
 export default function Template({ data }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter } = markdownRemark;
+  const { frontmatter, html } = markdownRemark;
   const {
-    title, thumbnail, duration, role, client, source, description,
+    title, thumbnail, duration, role, client, source,
   } = frontmatter;
   return (
     <Layout>
@@ -57,7 +58,7 @@ export default function Template({ data }) {
                 </WDMeta>
               </Grid>
               <WDDescription
-                dangerouslySetInnerHTML={{ __html: description }}
+                dangerouslySetInnerHTML={{ __html: html }}
               />
             </WDContent>
           </Grid>
@@ -81,6 +82,7 @@ export const pageQuery = graphql`
       fields {
         slug
       }
+      html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
@@ -89,7 +91,6 @@ export const pageQuery = graphql`
         thumbnail
         role
         source
-        description
       }
     }
   }

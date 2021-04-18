@@ -42,12 +42,12 @@ export const pageQuery = graphql`
          fields {
             slug
          }
+         html
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
           excerpt
           thumbnail 
-          content
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
@@ -57,7 +57,6 @@ export const pageQuery = graphql`
           duration
           role
           source
-          description
         }
       }
     }
