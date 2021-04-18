@@ -9,6 +9,7 @@ export const ServiceItem = ({ Icon, title, description }) => {
   const [viewRef, inView] = useInView({
     threshold: 0,
     delay: 100,
+    triggerOnce: true,
   });
   return (
     <SIWrap ref={viewRef}>

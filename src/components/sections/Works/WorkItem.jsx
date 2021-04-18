@@ -10,6 +10,7 @@ export const WorkItem = ({
   const [viewRef, inView] = useInView({
     threshold: 0,
     delay: 100,
+    triggerOnce: true,
   });
 
   return (

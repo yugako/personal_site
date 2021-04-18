@@ -4,29 +4,9 @@ import { WorkItem } from './WorkItem';
 
 // const worksData = [
 //     {
-//         preview: '/images/works/rhode.jpg',
-//         title: 'RhodesideRevival',
-//         category: 'Services'
-//     },
-//     {
-//         preview: '/images/works/uweed.jpg',
-//         title: 'uWeed',
-//         category: 'Medicine'
-//     },
-//     {
-//         preview: '/images/works/dlfny.jpg',
-//         title: 'DLFNY',
-//         category: 'Design'
-//     },
-//     {
 //         preview: '/images/works/assistrx.jpg',
 //         title: 'AssistRX',
 //         category: 'Medicine'
-//     },
-//     {
-//         preview: '/images/works/acacio.jpg',
-//         title: 'Acacio',
-//         category: 'Landscape'
 //     },
 //     {
 //         preview: '/images/works/hr.jpg',
