@@ -9,6 +9,7 @@ import {
 import { AMeta } from './AMeta';
 import { ABio } from './ABio';
 import { AExperience } from './AExperience';
+import { aboutText } from '../../../data';
 
 export const About = () => {
   const [viewRef, inView] = useInView({
@@ -17,14 +18,13 @@ export const About = () => {
     triggerOnce: true,
   });
   return (
-    <SectionWrap ref={viewRef}>
+    <SectionWrap id="about" ref={viewRef}>
       {inView && (
       <Container>
         <Grid>
           <SectionHeading
-            title="About"
-            subtitle="Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts."
+            title={aboutText.section_title}
+            subtitle={aboutText.section_subtitle}
           />
         </Grid>
         <AboutContent>

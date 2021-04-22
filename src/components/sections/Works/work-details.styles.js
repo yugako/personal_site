@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const WDWrap = styled.section`
   margin: 50px 0;
+  .wd-header {
+    margin-bottom: 20px;
+  }
 `;
 
 export const WDTitle = styled.h1`
@@ -20,13 +23,16 @@ export const WDImg = styled.img`
 export const WDContent = styled.div`
   word-break: break-word;
   margin-top: 50px;
+  @media (max-width: 991px) {
+    margin-top: 0px;
+  }
 `;
 
 export const WDMeta = styled.div``;
 
 export const WDDescription = styled.div`
-  margin-bottom: 20px;
-  color: rgb(33, 37, 41);
+  color: var(--dark);
+  margin: 30px 0 20px;
 `;
 
 export const WDLabel = styled.span`

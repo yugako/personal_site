@@ -1,24 +1,7 @@
 import React from 'react';
+import { array } from 'prop-types';
 import { Container, Masonry, SectionWrap } from '../../../layout/layout.styles';
 import { WorkItem } from './WorkItem';
-
-// const worksData = [
-//     {
-//         preview: '/images/works/assistrx.jpg',
-//         title: 'AssistRX',
-//         category: 'Medicine'
-//     },
-//     {
-//         preview: '/images/works/hr.jpg',
-//         title: 'Hryzantema',
-//         category: 'Services'
-//     },
-//     {
-//         preview: '/images/works/ambari.jpg',
-//         title: 'AmabariBeauty',
-//         category: 'Cosmetics'
-//     }
-// ]
 
 export const Works = ({ works }) => (
   <SectionWrap id="works">
@@ -36,5 +19,12 @@ export const Works = ({ works }) => (
       </Masonry>
     </Container>
   </SectionWrap>
-
 );
+
+Works.defaultProps = {
+  works: [],
+};
+
+Works.propTypes = {
+  works: array,
+};

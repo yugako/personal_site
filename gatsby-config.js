@@ -1,6 +1,12 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://hasiuk.netlify.app',
+    title: 'Hasiuk',
+    titleTemplate: '%s · Hasiuk',
+    description:
+        'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
+    url: 'https://hasiuk.netlify.app', // No trailing slash allowed!
+    image: '/img/me.jpg', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@YHasiuk',
   },
   plugins: [
     'gatsby-plugin-netlify-cms',

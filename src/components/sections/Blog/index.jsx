@@ -5,7 +5,7 @@ import { SectionHeading } from '../../common/SectionHeading';
 import { BlogItem } from './BlogItem';
 
 export const Blog = ({ articles }) => (
-  <SectionWrap>
+  <SectionWrap id="blog">
     <Container>
       <SectionHeading title="Blog" subtitle="News & Updates" align="center" />
       <Grid columns="1fr 1fr 1fr 1fr" style={{ marginTop: '1.5rem' }}>

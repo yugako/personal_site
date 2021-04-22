@@ -11,8 +11,10 @@ import {
   WDValue, WDWrap,
 } from '@components/sections/Works/work-details.styles';
 import { ButtonWrap } from '@components/common/Button/button.styles';
+import { Helmet } from 'react-helmet';
 import { Container, Flex, Grid } from '../layout/layout.styles';
 import { Layout } from '../layout';
+import { SEO } from '../components/common/SEO';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const BackLink = (props) => <Link to="/" {...props}>Go Back</Link>;
@@ -25,9 +27,13 @@ export default function Template({ data }) {
   } = frontmatter;
   return (
     <Layout>
+      <SEO
+        title={title}
+        image={thumbnail}
+      />
       <WDWrap>
         <Container>
-          <Flex horizontal="space-between">
+          <Flex className="wd-header" horizontal="space-between">
             <WDTitle>{title}</WDTitle>
             <ButtonWrap as={BackLink} />
           </Flex>
@@ -37,7 +43,7 @@ export default function Template({ data }) {
               alt={title}
             />
             <WDContent>
-              <Grid style={{ marginBottom: 50 }}>
+              <Grid>
                 <WDMeta>
                   <WDLabel>Deliverables</WDLabel>
                   <WDValue>{duration}</WDValue>

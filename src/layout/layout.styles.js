@@ -104,6 +104,7 @@ export const Grid = styled.div`
   gap: ${({ gap }) => gap || 20}px;
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 `;
 

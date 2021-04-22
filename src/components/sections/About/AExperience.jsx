@@ -1,28 +1,23 @@
-import React from "react";
-import {Grid} from "../../../layout/layout.styles";
-import {AboutExperience, AEItem, AEItemContent} from "./about.styles";
-import {IBriefcase} from "../../common/Icons";
+import React from 'react';
+import { Grid } from '../../../layout/layout.styles';
+import { AboutExperience, AEItem, AEItemContent } from './about.styles';
+import { IBriefcase } from '../../common/Icons';
+import { aboutText } from '../../../data';
 
 export const AExperience = () => (
-    <AboutExperience>
-        <h3>Work experience</h3>
-        <Grid>
-            <AEItem>
-                <IBriefcase />
-                <AEItemContent>
-                    <h4>JavaScript Software Engineer</h4>
-                    <a href="https://epam.com" rel="nofollow noreferrer" target="_blank">EPAM Systems</a>
-                    <span>2020-now</span>
-                </AEItemContent>
-            </AEItem>
-            <AEItem>
-                <IBriefcase />
-                <AEItemContent>
-                    <h4>Front-end Engineer</h4>
-                    <a href="https://upqode.com" rel="nofollow noreferrer" target="_blank">UPQODE</a>
-                    <span>2019-2020</span>
-                </AEItemContent>
-            </AEItem>
-        </Grid>
-    </AboutExperience>
-)
+  <AboutExperience>
+    <h3>{aboutText.exp_title}</h3>
+    <Grid>
+      {aboutText.exp_list.map((exp) => (
+        <AEItem>
+          <IBriefcase />
+          <AEItemContent>
+            <h4>{exp.title}</h4>
+            <a href={exp.site} rel="nofollow noreferrer" target="_blank">{exp.company}</a>
+            <span>{exp.duration}</span>
+          </AEItemContent>
+        </AEItem>
+      ))}
+    </Grid>
+  </AboutExperience>
+);
