@@ -13,6 +13,6 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
     'react/forbid-prop-types': 'off',
-    'jsx-props-no-spreading': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };

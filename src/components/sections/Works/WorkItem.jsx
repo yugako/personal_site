@@ -1,7 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { WorkItemContent, WorkItemOverlay, WorkItemWrapper } from './works.styles';
 
 export const WorkItem = ({
@@ -16,7 +16,11 @@ export const WorkItem = ({
   return (
     <WorkItemWrapper ref={viewRef}>
       {inView && (
-      <Link to={`${slug}`}>
+      <AniLink
+        hex="#1b9cfc"
+        paintDrip
+        to={`${slug}`}
+      >
         <img src={preview} alt={title} />
         <WorkItemOverlay>
           <span className="wrap-icon icon-link2" />
@@ -29,7 +33,7 @@ export const WorkItem = ({
             </p>
           </WorkItemContent>
         </WorkItemOverlay>
-      </Link>
+      </AniLink>
       )}
     </WorkItemWrapper>
   );

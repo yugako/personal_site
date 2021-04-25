@@ -18,6 +18,7 @@ export const LayoutStyles = createGlobalStyle`
   
   body {
     font-family: var(--primary-font);
+    margin: 0;
   }
   
   p {

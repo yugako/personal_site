@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import { graphql, Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import {
   WDContent,
   WDDescription,
@@ -11,13 +12,36 @@ import {
   WDValue, WDWrap,
 } from '@components/sections/Works/work-details.styles';
 import { ButtonWrap } from '@components/common/Button/button.styles';
-import { Helmet } from 'react-helmet';
 import { Container, Flex, Grid } from '../layout/layout.styles';
 import { Layout } from '../layout';
 import { SEO } from '../components/common/SEO';
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const BackLink = (props) => <Link to="/" {...props}>Go Back</Link>;
+const BackLink = ({ bgImage, ...props }) => (
+  <AniLink
+    cover
+    to="/"
+    bg={`
+      url(${bgImage})
+      center / cover   /* position / size */
+      no-repeat        /* repeat */
+      fixed            /* attachment */
+      padding-box      /* origin */
+      content-box      /* clip */
+      #1b9cfc            /* color */
+    `}
+    {...props}
+  >
+    Go Back
+  </AniLink>
+);
+
+BackLink.defaultProps = {
+  bgImage: '',
+};
+
+BackLink.propTypes = {
+  bgImage: string,
+};
 
 export default function Template({ data }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
@@ -35,7 +59,7 @@ export default function Template({ data }) {
         <Container>
           <Flex className="wd-header" horizontal="space-between">
             <WDTitle>{title}</WDTitle>
-            <ButtonWrap as={BackLink} />
+            <ButtonWrap bgImage={thumbnail} as={BackLink} />
           </Flex>
           <Grid gap={50} vertical="stretch">
             <WDImg
