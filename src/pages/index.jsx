@@ -9,6 +9,7 @@ import { Blog } from '@components/sections/Blog';
 import { Link, graphql } from 'gatsby';
 import { Layout } from '../layout';
 import { SEO } from '../components/common/SEO';
+import { Contact } from '../components/sections/Contact';
 
 const IndexPage = ({ data, location }) => {
   const { allMarkdownRemark } = data;
@@ -22,6 +23,7 @@ const IndexPage = ({ data, location }) => {
       <Services />
       <About />
       <Blog articles={allMarkdownRemark.nodes.filter((item) => item.fileAbsolutePath.split('/').reverse()[1] === 'blog')} />
+      <Contact />
       <Footer />
     </Layout>
   );

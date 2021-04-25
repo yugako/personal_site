@@ -66,6 +66,11 @@ const aboutText = {
   cv_link_label: 'Download CV',
 };
 
+const contactText = {
+  section_title: 'Contact',
+  section_subtitle: 'Available for work. Get in touch',
+};
+
 export {
-  bannerText, servicesText, aboutText,
+  bannerText, servicesText, aboutText, contactText,
 };
