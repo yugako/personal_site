@@ -5,6 +5,12 @@ export const WDWrap = styled.section`
   .wd-header {
     margin-bottom: 20px;
   }
+  
+  @media (max-width: 991px) {
+    .wd-content {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
 
 export const WDTitle = styled.h1`

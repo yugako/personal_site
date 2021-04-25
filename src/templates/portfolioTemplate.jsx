@@ -61,7 +61,7 @@ export default function Template({ data }) {
             <WDTitle>{title}</WDTitle>
             <ButtonWrap bgImage={thumbnail} as={BackLink} />
           </Flex>
-          <Grid gap={50} vertical="stretch">
+          <Grid gap={50} vertical="stretch" className="wd-content">
             <WDImg
               src={thumbnail}
               alt={title}

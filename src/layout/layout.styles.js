@@ -33,6 +33,10 @@ export const LayoutStyles = createGlobalStyle`
   .t-primary {
     color: var(--primary);
   }
+
+  .tl-wrapper {
+    height: 100vh;
+  }
 `;
 
 function randomHeight() {

@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Hasiuk',
     titleTemplate: '%s · Hasiuk',
-    description:
-        'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
+    description: 'A person with a weakness to test all new and constant learning',
     siteUrl: 'https://hasiuk.netlify.app', // No trailing slash allowed!
     url: 'https://hasiuk.netlify.app', // No trailing slash allowed!
     image: '/img/me.jpg', // Path to your image you placed in the 'static' folder
