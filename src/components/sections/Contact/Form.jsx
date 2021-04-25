@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from '../../common/Button';
 import { Grid } from '../../../layout/layout.styles';
-import { CF, CFInput, CFTextArea } from './contact.styles';
+import {
+  CF, CFError, CFInput, CFSuccess, CFTextArea,
+} from './contact.styles';
 
 function encode(data) {
   return Object.keys(data)
@@ -11,6 +13,7 @@ function encode(data) {
 
 export const ContactForm = () => {
   const [state, setState] = useState({});
+  const [message, setMessage] = useState();
   const [error, setError] = useState();
 
   const handleChange = (e) => {
@@ -28,8 +31,14 @@ export const ContactForm = () => {
         ...state,
       }),
     })
-      .catch((err) => {
-        setError(err.message);
+      .then(() => {
+        setState({});
+        setMessage('Your message has been sent!');
+        setTimeout(() => { setMessage(null); }, 5000);
+      })
+      .catch(() => {
+        setError('Oops...something went wrong! Please, try again.');
+        setTimeout(() => { setError(null); }, 5000);
       });
   };
 
@@ -38,14 +47,15 @@ export const ContactForm = () => {
       <Grid columns="1fr 1fr">
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
-        <CFInput name="name" onChange={handleChange} type="text" placeholder="Name" />
-        <CFInput name="email" onChange={handleChange} type="email" placeholder="Email" />
+        <CFInput required name="name" onChange={handleChange} type="text" placeholder="Name" />
+        <CFInput required name="email" onChange={handleChange} type="email" placeholder="Email" />
       </Grid>
-      <CFTextArea name="message" onChange={handleChange} placeholder="Write message" />
+      <CFTextArea required name="message" onChange={handleChange} placeholder="Write message" />
       <Button>
         Submit
       </Button>
-      {error ? <div>Oops...something went wrong! Please, try again.</div> : null}
+      {message ? <CFSuccess>{message}</CFSuccess> : null}
+      {error ? <CFError>{error}</CFError> : null}
     </CF>
   );
 };

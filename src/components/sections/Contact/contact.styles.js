@@ -34,3 +34,15 @@ export const CFTextArea = styled(CFInput).attrs({
   min-height: 150px;
   resize: vertical;
 `;
+
+export const CFError = styled.div`
+  color: darkred;
+  text-align: center;
+  margin: 1rem auto;
+`;
+
+export const CFSuccess = styled.div`
+  color: darkgreen;
+  text-align: center;
+  margin: 1rem auto;
+`;
