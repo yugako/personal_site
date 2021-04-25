@@ -62,7 +62,7 @@ const aboutText = {
   ],
   exp_years: '2 Years of experience',
   portfolio_label: 'See portfolio',
-  cv_link: 'https://drive.google.com/open?id=16diMItjPj-x6-Ah24nQpR4CJPqPee3NP',
+  cv_link: 'https://drive.google.com/file/d/1LsMs_KO9THSaiX20nrXmhDqaZA1OnAxw/view?usp=sharing',
   cv_link_label: 'Download CV',
 };
 

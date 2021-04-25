@@ -34,7 +34,7 @@ export const MenuDrawer = ({ isActive, clickHandler }) => (
       <MenuList>
         {
           navLinks.map(({ link, label }) => (
-            <MenuItem>
+            <MenuItem key={label}>
               <MenuLink href={link}>{label}</MenuLink>
             </MenuItem>
           ))

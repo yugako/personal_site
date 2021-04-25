@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import {SectionWrap} from "../../../layout/layout.styles";
+import styled from 'styled-components';
+import { SectionWrap } from '../../../layout/layout.styles';
 
-export const FooterWrap = styled(SectionWrap)`
+export const FooterWrap = styled(SectionWrap).attrs({
+  as: 'footer',
+})`
   text-align: center;
-  margin-bottom: 1rem;
   a {
     display: inline-block;
   }
@@ -11,5 +12,5 @@ export const FooterWrap = styled(SectionWrap)`
 
 export const FooterText = styled.p`
   color: var(--gray);
-  margin: 0;
+  margin: 0 0 2rem;
 `;

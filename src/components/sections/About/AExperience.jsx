@@ -9,7 +9,7 @@ export const AExperience = () => (
     <h3>{aboutText.exp_title}</h3>
     <Grid>
       {aboutText.exp_list.map((exp) => (
-        <AEItem>
+        <AEItem key={exp.title}>
           <IBriefcase />
           <AEItemContent>
             <h4>{exp.title}</h4>

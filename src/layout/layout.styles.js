@@ -33,10 +33,6 @@ export const LayoutStyles = createGlobalStyle`
   .t-primary {
     color: var(--primary);
   }
-
-  .tl-wrapper {
-    height: 100vh;
-  }
 `;
 
 function randomHeight() {
@@ -115,6 +111,15 @@ export const Grid = styled.div`
 
 export const SectionWrap = styled.section`
   margin-top: 7.5rem;
+  &.banner {
+    margin-top: 9rem;
+    @media (max-width: 1024px) {
+      margin-top: 7.5rem;
+    }
+    @media (max-width: 576px) {
+      margin-top: 6rem;
+    }
+  }
   @media (max-width: 1024px) {
     margin-top: 5rem;
   }

@@ -17,6 +17,7 @@ export const Services = () => (
         <Grid columns="1fr 1fr 1fr">
           {servicesText.services_list.map((service) => (
             <ServiceItem
+              key={service.title}
               Icon={service.icon}
               title={service.title}
               description={service.description}

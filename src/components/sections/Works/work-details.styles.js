@@ -7,6 +7,7 @@ export const WDWrap = styled.section`
   }
   
   @media (max-width: 991px) {
+    margin: 25px 0;
     .wd-content {
       grid-template-columns: 1fr;
     }

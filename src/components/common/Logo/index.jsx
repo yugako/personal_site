@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { elementType } from 'prop-types';
+import { any } from 'prop-types';
 import { Logo } from './logo.styles';
 import { Dot } from '../Dot';
 
@@ -19,5 +19,5 @@ LogoLink.defaultProps = {
 };
 
 LogoLink.propTypes = {
-  children: elementType,
+  children: any,
 };
